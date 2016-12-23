@@ -4,12 +4,13 @@
 
 ProductToPurcase::ProductToPurcase()
 {
-	product = new Product;
+	product = new Product();
 }
 
 
 ProductToPurcase::~ProductToPurcase()
 {
+	delete product;
 }
 
 Product * ProductToPurcase::getProduct() const
