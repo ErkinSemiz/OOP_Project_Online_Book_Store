@@ -11,6 +11,11 @@ Customer::~Customer()
 {
 }
 
+void Customer::sendBill() const
+{
+	cout << "Invoice sent to " << email << endl;
+}
+
 const long& Customer::getCustomerID() const
 {
 	return customerID;
@@ -89,5 +94,22 @@ const string& Customer::getPassword() const
 void Customer::setPassword(const string& password)
 {
 	this->password = password;
+}
+
+bool Customer::checkAccount(const string& username, const string& password) const
+{
+	if (this->username == username&&this->password == password)
+		return true;
+	else
+		return false;
+	
+}
+
+void Customer::addBonus(double bonus)
+{
+}
+
+void Customer::useBonus()
+{
 }
 

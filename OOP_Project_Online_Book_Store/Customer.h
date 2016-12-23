@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 using namespace std;
 /**
 * @file Customer.h
@@ -26,7 +27,7 @@ public:
 	//! Default deconstructor function
 	~Customer();
 
-	void sendBill();
+	void sendBill() const;
 	//! Return customer ID
 	const long& getCustomerID() const;
 	//! Set customer ID
