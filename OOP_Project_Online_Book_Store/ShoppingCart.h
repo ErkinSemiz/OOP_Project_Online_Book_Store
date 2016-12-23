@@ -3,6 +3,7 @@
 #include "Payment.h"
 #include "Customer.h"
 #include <list>
+#include <algorithm>
 /**
 * @file ShoppingCart.h
 * @Author Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com)
@@ -42,7 +43,7 @@ public:
 	void addProduct(Product* product);
 	
 	//! Remove product from shopping char
-	void removeProduct(const Product* product);
+	void removeProduct(Product* product);
 	
 	//! Place order
 	void placeOrder();
