@@ -30,10 +30,16 @@ void ShoppingCart::setBonusUsed(const bool is_bonus_used)
 	isBonusUsed = is_bonus_used;
 }
 
-//void ShoppingCart::addProduct(Product* product)
-//{
-//	productsToPurchase.push_front(product);
-//}
+void ShoppingCart::addProduct(Product* product)
+{
+	ProductToPurchase* a = new ProductToPurchase();
+	a->setProduct(product);
+	cout << "How many: " << product->getName() << "do you want: ";
+	int productCount;
+	cin >> productCount;
+	a->setQuantity(productCount);
+	productsToPurchase.push_back(a);
+}
 
 Payment* const& ShoppingCart::getPaymentMethod() const
 {

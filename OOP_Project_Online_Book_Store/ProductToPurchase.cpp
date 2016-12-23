@@ -20,11 +20,11 @@ Product * ProductToPurchase::getProduct() const
 /*!
 \param product "product" variable of ProductToPurchase will be set
 */
-//void ProductToPurchase::setProduct(Product * product)
-//{
-//	this->product = product;
-//	//TO DO code name, ID, price
-//}
+void ProductToPurchase::setProduct(Product * product)
+{
+	this->product = product;
+	//TO DO code name, ID, price
+}
 
 int ProductToPurchase::getQuantity() const
 {
