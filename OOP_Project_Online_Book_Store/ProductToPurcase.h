@@ -1,7 +1,7 @@
 #pragma once
 #include "Product.h"
 /**
-* @file Product.h
+* @file ProductToPurcase.h
 * @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
 * @date December, 2016
 * @brief Keeps informations about purchase that will be bought

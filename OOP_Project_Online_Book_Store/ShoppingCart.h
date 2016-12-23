@@ -4,7 +4,7 @@
 #include "Customer.h"
 #include <list>
 /**
-* @file Product.h
+* @file ShoppingCart.h
 * @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
 * @date December, 2016
 * @brief Keeps products that will be bought and customer that using the "shopping cart"

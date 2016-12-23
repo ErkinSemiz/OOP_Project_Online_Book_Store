@@ -1,7 +1,7 @@
 #pragma once
 #include "Payment.h"
 /**
-* @file Payment.h
+* @file Cash.h
 * @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
 * @date December, 2016
 * @brief Payment method for customer.
