@@ -1,5 +1,5 @@
 #pragma once
-#include "ProductToPurcase.h"
+#include "ProductToPurchase.h"
 #include "Payment.h"
 #include "Customer.h"
 #include <list>
@@ -12,7 +12,7 @@
 class ShoppingCart
 {
 private:
-	list<ProductToPurcase*> productsToPurchase; /*!< Keeps a list of purchased products */ 
+	list<ProductToPurchase*> productsToPurchase; /*!< Keeps a list of purchased products */ 
 	Payment* paymentMethod; /*!< Payment method for shopping */
 	Customer* customer;
 	bool isBonusUsed;
@@ -39,10 +39,10 @@ public:
 	void setBonusUsed(const bool is_bonus_used);
 
 	//! Add product to shopping char
-	void addProduct(const Product* product);
+	void addProduct(Product* product);
 	
 	//! Remove product from shopping char
-	void removeProduct(const Product* procuct);
+	void removeProduct(const Product* product);
 	
 	//! Place order
 	void placeOrder();

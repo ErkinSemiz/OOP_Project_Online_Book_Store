@@ -127,7 +127,7 @@
     <ClInclude Include="MusicCD.h" />
     <ClInclude Include="Payment.h" />
     <ClInclude Include="Product.h" />
-    <ClInclude Include="ProductToPurcase.h" />
+    <ClInclude Include="ProductToPurchase.h" />
     <ClInclude Include="ShoppingCart.h" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +140,7 @@
     <ClCompile Include="MusicCD.cpp" />
     <ClCompile Include="Payment.cpp" />
     <ClCompile Include="Product.cpp" />
-    <ClCompile Include="ProductToPurcase.cpp" />
+    <ClCompile Include="ProductToPurchase.cpp" />
     <ClCompile Include="ShoppingCart.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

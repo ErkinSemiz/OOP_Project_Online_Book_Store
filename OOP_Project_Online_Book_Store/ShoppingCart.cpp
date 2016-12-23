@@ -30,6 +30,11 @@ void ShoppingCart::setBonusUsed(const bool is_bonus_used)
 	isBonusUsed = is_bonus_used;
 }
 
+//void ShoppingCart::addProduct(Product* product)
+//{
+//	productsToPurchase.push_front(product);
+//}
+
 Payment* const& ShoppingCart::getPaymentMethod() const
 {
 	return paymentMethod;
