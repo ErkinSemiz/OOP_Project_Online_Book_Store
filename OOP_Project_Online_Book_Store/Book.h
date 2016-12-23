@@ -2,7 +2,7 @@
 #include "Product.h"
 /**
 * @file Book.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
+* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
 * @date December, 2016
 * @brief Class for creating "Book"s
 *
