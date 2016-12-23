@@ -5,7 +5,7 @@
 #include <list>
 /**
 * @file ShoppingCart.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
+* @Author Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Keeps products that will be bought and customer that using the "shopping cart"
 */
@@ -24,19 +24,19 @@ public:
 	~ShoppingCart();
 	
 	//! Return payment method
-	Payment* getPaymentMethod();
-	
+	Payment* const& getPaymentMethod() const;
+
 	//! Set payment method
-	void setPaymentMethod(const Payment* paymentMethod);
-	
+	void setPaymentMethod(Payment* const payment_method);
+
 	//! Return customer
-	Customer* getCustomer();
-	
+	Customer* const& getCustomer() const;
+
 	//! Set customer
-	void setCustomer(const Customer* customer);
-	
+	void setCustomer(Customer* const customer);
+
 	//! Use bonu for shopping
-	void setBonusUsed();
+	void setBonusUsed(const bool is_bonus_used);
 
 	//! Add product to shopping char
 	void addProduct(const Product* product);
