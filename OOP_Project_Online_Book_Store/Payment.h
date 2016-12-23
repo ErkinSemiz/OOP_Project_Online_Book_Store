@@ -8,7 +8,7 @@ using namespace std;
 * @date December, 2016
 * @brief Base class for other payment types.
 *
-* @details This class involves basic functions and a virtual function for other class that is inherted from this class.
+* @details This class contains basic functions and a virtual function for other class that is inherted from this class.
 */
 class Payment
 {
