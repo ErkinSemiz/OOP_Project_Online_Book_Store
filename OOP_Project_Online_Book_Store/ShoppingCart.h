@@ -6,7 +6,7 @@
 #include <algorithm>
 /**
 * @file ShoppingCart.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com)
+* @Authors Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Keeps products that will be bought and customer that using the "shopping cart"
 */

@@ -69,9 +69,9 @@ void ShoppingCart::placeOrder()
 {
 	double totalPrice = 0;
 	auto iterator = productsToPurchase.begin();
-	for (int i = 0; i < productsToPurchase.size;i++)
+	for (int i = 0; i < productsToPurchase.size();i++)
 	{
-		totalPrice += (*iterator)->getQuantity * (*iterator)->getProduct()->getPrice();
+		totalPrice += (*iterator)->getQuantity() * (*iterator)->getProduct()->getPrice();
 		iterator = next(productsToPurchase.begin(),i);
 	}
 	
@@ -82,7 +82,7 @@ void ShoppingCart::placeOrder()
 		<< "2.)Cash" << endl
 		<< "3.)Check" << endl;
 	int checkPayment;
-	while (1) {
+	while (true) {
 		cin >> checkPayment;
 		if (checkPayment > 0 && checkPayment < 4)
 			break;
@@ -129,11 +129,22 @@ void ShoppingCart::placeOrder()
 	}
 	getPaymentMethod()->performPayment();
 	this->customer->sendBill();
-		
+		//To Do listeyi bosaltýn ha
 }
 
 void ShoppingCart::cancelOrder()
 {
+	//To Do cout cancel edildi bosalt yine stackleri listeleri
+}
+
+void ShoppingCart::printProducts() const
+{
+	//To do productsToPurchasedaki,product name ve quantityleri coutlýcaz 
+}
+
+void ShoppingCart::showInvoice()
+{
+	//To do faturaya iste payment detaylarý felandý coutlýcaz
 }
 
 Payment* const& ShoppingCart::getPaymentMethod() const

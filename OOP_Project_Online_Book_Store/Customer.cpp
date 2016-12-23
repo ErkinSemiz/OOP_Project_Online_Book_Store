@@ -102,9 +102,10 @@ bool Customer::checkAccount(const string& username, const string& password) cons
 		return true;
 	else
 		return false;
-	
+	//bunu yazdýk emme bunu mainde listten teker teker kontrol edip dönen boola göre gerekli customer nesnesini cagiracaz.
 }
 
+//bunlarý mainde bir ana islem bittikten sonra ekstradan impelement edecez
 void Customer::addBonus(double bonus)
 {
 }
