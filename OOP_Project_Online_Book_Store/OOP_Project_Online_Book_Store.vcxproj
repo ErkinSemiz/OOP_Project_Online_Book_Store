@@ -122,6 +122,7 @@
     <ClInclude Include="Cash.h" />
     <ClInclude Include="Check.h" />
     <ClInclude Include="CreditCard.h" />
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="Payment.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProductToPurcase.h" />
@@ -132,6 +133,7 @@
     <ClCompile Include="Cash.cpp" />
     <ClCompile Include="Check.cpp" />
     <ClCompile Include="CreditCard.cpp" />
+    <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Payment.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductToPurcase.cpp" />
