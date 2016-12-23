@@ -4,7 +4,7 @@
 
 ProductToPurcase::ProductToPurcase()
 {
-	product = new Product();
+	//product = new Product();
 }
 
 
@@ -22,7 +22,8 @@ Product * ProductToPurcase::getProduct() const
 */
 void ProductToPurcase::setProduct(Product * product)
 {
-	this->product = product;
+	this->product = new Product();
+	//TO DO code name, ID, price
 }
 
 int ProductToPurcase::getQuantity() const
