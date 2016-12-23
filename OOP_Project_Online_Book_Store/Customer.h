@@ -13,7 +13,7 @@ class Customer
 {
 private:
 	long customerID;  /*!< Customer ID */ 
-	string Name; /*!< Customer name */ 
+	string name; /*!< Customer name */ 
 	string adress; /*!< Customer adress */ 
 	string phone; /*!< Customer phone number */ 
 	double bonus; /*!< Customer bonus amount */ 
@@ -26,55 +26,40 @@ public:
 	//! Default deconstructor function
 	~Customer();
 
-	void sedBill();
+	void sendBill();
 	//! Return customer ID
-	long getCustomerID() const;
-	
+	const long& getCustomerID() const;
 	//! Set customer ID
-	void setCustomerID(long customerID);
-	
+	void setCustomerID(const long customer_id);
 	//! Return customer name
-	string getName() const;
-	
+	const string& getName() const;
 	//! Set customer name
 	void setName(const string& name);
-	
 	//! Return customer adress
-	string getAdress() const;
-
+	const string& getAdress() const;
 	//! Set customer adress
 	void setAdress(const string& adress);
-	
 	//! Return customer phone number
-	string getPhone() const;
-	
+	const string& getPhone() const;
 	//! Set customer number
 	void setPhone(const string& phone);
-	
 	//! Return customer bonus amount
-	double getBonus() const;
-
+	const double& getBonus() const;
 	//! Set customer bonus amount
-	void setBonus(double bonus);
-	
+	void setBonus(const double bonus);
 	//! Return customer email adress
-	string getEmail() const;
-
+	const string& getEmail() const;
 	//! Set customer email adress
 	void setEmail(const string& email);
-	
 	//! Return customer user name
-	string getUserName() const;
-
+	const string& getUsername() const;
 	//! Set customer user name
-	void setUserName(const string& username);
-	
+	void setUsername(const string& username);
 	//! Return customer password
-	string getPassword() const;
-
+	const string& getPassword() const;
 	//! Set customer password
 	void setPassword(const string& password);
-	
+
 	//! Check if customer user name and password
 	bool checkAccount(const string& username, const string& password) const;
 
