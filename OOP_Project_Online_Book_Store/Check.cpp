@@ -13,7 +13,7 @@ Check::~Check()
 
 void Check::performPayment()
 {
-	cout << "Payment is made with check." << endl;
+	cout << getAmount() << " is paid with check." << endl;
 }
 
 string Check::getName() const

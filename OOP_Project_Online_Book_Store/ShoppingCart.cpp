@@ -1,7 +1,10 @@
 #include "ShoppingCart.h"
 #include <iterator>
+#include <string>
 #include <algorithm>
 #include "CreditCard.h"
+#include "Cash.h"
+#include "Check.h"
 
 
 ShoppingCart::ShoppingCart()
@@ -64,12 +67,32 @@ void ShoppingCart::removeProduct(Product* product)
 
 void ShoppingCart::placeOrder()
 {
+	double totalPrice = 0;
+	auto iterator = productsToPurchase.begin();
+	for (int i = 0; i < productsToPurchase.size;i++)
+	{
+		totalPrice += (*iterator)->getQuantity * (*iterator)->getProduct()->getPrice();
+		iterator = next(productsToPurchase.begin(),i);
+	}
+	
+	
+
 	cout << "What is your payment method ?"
 		<< "1.)Credit Card" << endl
 		<< "2.)Cash" << endl
 		<< "3.)Check" << endl;
 	int checkPayment;
-	cin >> checkPayment;
+	while (1) {
+		cin >> checkPayment;
+		if (checkPayment > 0 && checkPayment < 4)
+			break;
+		cout << "Wrong Entry!" << endl;
+	}
+	string type;
+	string ed;
+	string _name;
+	string _bankID;
+	
 	switch (checkPayment) {
 	case 1:
 		CreditCard* Card = new CreditCard();
@@ -77,17 +100,40 @@ void ShoppingCart::placeOrder()
 		long cn;
 		cin >> cn;
 		Card->setNumber(cn);
-		cout << "Please Enter Type Of The Card: ";
-		string type;
+		cout << "Please Enter Type Of The Card: ";		
 		getline(cin, type);
 		Card->setType(type);
-		cout << "Please Enter The Expire Date: ";
-		string ed;
+		cout << "Please Enter The Expire Date: ";		
 		getline(cin, ed);
+		Card->setAmount(totalPrice);
 		Card->setExpDate(ed);
 		setPaymentMethod(Card);
 		break;
+	case 2:
+		Cash* _Cash = new Cash();
+		_Cash->setAmount(totalPrice);
+		setPaymentMethod(_Cash);
+		break;
+	case 3:
+		Check* _Check = new Check();
+		cout << "Please Enter Check Name : ";		
+		cin >> _name;
+		_Check->setName(_name);
+		cout << "Please Enter The Bank ID : ";		
+		cin >> _bankID;
+		_Check->setAmount(totalPrice);
+		setPaymentMethod(_Check);
+		break;
+	default:
+		break;
 	}
+	getPaymentMethod()->performPayment();
+	this->customer->sendBill();
+		
+}
+
+void ShoppingCart::cancelOrder()
+{
 }
 
 Payment* const& ShoppingCart::getPaymentMethod() const

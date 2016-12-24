@@ -55,5 +55,5 @@ void CreditCard::setExpDate(const string & expDate)
 
 void CreditCard::performPayment()
 {
-	cout << "Payment is made with credit card." << endl;
+	cout << getAmount() << " is paid with credit card." << endl;
 }

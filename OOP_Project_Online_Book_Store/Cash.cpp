@@ -13,5 +13,5 @@ Cash::~Cash()
 
 void Cash::performPayment()
 {
-	cout << "Payment is made with check." << endl;
+	cout << getAmount() << " is paid with cash." << endl;
 }
