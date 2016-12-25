@@ -123,6 +123,7 @@
     <ClInclude Include="Check.h" />
     <ClInclude Include="CreditCard.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="CustomerButton.h" />
     <ClInclude Include="Magazine.h" />
     <ClInclude Include="MusicCD.h" />
     <ClInclude Include="Payment.h" />
@@ -136,7 +137,9 @@
     <ClCompile Include="Check.cpp" />
     <ClCompile Include="CreditCard.cpp" />
     <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="CustomerButton.cpp" />
     <ClCompile Include="Magazine.cpp" />
+    <ClCompile Include="MainProgramme.cpp" />
     <ClCompile Include="MusicCD.cpp" />
     <ClCompile Include="Payment.cpp" />
     <ClCompile Include="Product.cpp" />

@@ -106,43 +106,76 @@ void ShoppingCart::placeOrder()
 	string _name;
 	string _bankID;
 	
-	switch (checkPayment) {
-	case 1:
+	//switch (checkPayment) {
+	//case 1:
+	//	CreditCard* Card = new CreditCard();
+	//	cout << "Please Enter Card Number : ";
+	//	long cn;
+	//	cin >> cn;
+	//	Card->setNumber(cn);
+	//	cout << "Please Enter Type Of The Card: ";		
+	//	getline(cin, type);
+	//	Card->setType(type);
+	//	cout << "Please Enter The Expire Date: ";		
+	//	getline(cin, ed);
+	//	Card->setAmount(totalPrice);
+	//	Card->setExpDate(ed);
+	//	setPaymentMethod(Card);
+	//	break;
+	//case 2:
+	//	Cash* _Cash = new Cash();
+	//	_Cash->setAmount(totalPrice);
+	//	setPaymentMethod(_Cash);
+	//	break;
+	//case 3:
+	//	Check* _Check = new Check();
+	//	cout << "Please Enter Check Name : ";		
+	//	cin >> _name;
+	//	_Check->setName(_name);
+	//	cout << "Please Enter The Bank ID : ";		
+	//	cin >> _bankID;
+	//	_Check->setAmount(totalPrice);
+	//	setPaymentMethod(_Check);
+	//	break;
+	//default:
+	//	break;
+	//}
+	if (checkPayment == 1) {
 		CreditCard* Card = new CreditCard();
 		cout << "Please Enter Card Number : ";
 		long cn;
 		cin >> cn;
 		Card->setNumber(cn);
-		cout << "Please Enter Type Of The Card: ";		
+		cout << "Please Enter Type Of The Card: ";
 		getline(cin, type);
 		Card->setType(type);
-		cout << "Please Enter The Expire Date: ";		
+		cout << "Please Enter The Expire Date: ";
 		getline(cin, ed);
 		Card->setAmount(totalPrice);
 		Card->setExpDate(ed);
 		setPaymentMethod(Card);
-		break;
-	case 2:
+	}
+	else if (checkPayment == 2) {
 		Cash* _Cash = new Cash();
 		_Cash->setAmount(totalPrice);
 		setPaymentMethod(_Cash);
-		break;
-	case 3:
+	}
+	else if (checkPayment == 3) {
 		Check* _Check = new Check();
-		cout << "Please Enter Check Name : ";		
+		cout << "Please Enter Check Name : ";
 		cin >> _name;
 		_Check->setName(_name);
-		cout << "Please Enter The Bank ID : ";		
+		cout << "Please Enter The Bank ID : ";
 		cin >> _bankID;
 		_Check->setAmount(totalPrice);
 		setPaymentMethod(_Check);
-		break;
-	default:
-		break;
 	}
 	getPaymentMethod()->performPayment();
 	this->customer->sendBill();
-	auto iterator = productsToPurchase.begin();
+	//typedef list<ProductToPurchase*>::const_iterator iterator;
+	//list<ProductToPurchase*>::const_iterator iterator;
+
+	//auto iterator = productsToPurchase.begin();
 	for (iterator = productsToPurchase.begin(); iterator != productsToPurchase.end(); iterator++)
 	{
 		delete(*iterator);
@@ -195,7 +228,6 @@ void ShoppingCart::showInvoice()
 	cout << endl;
 	if (typeid(this->getPaymentMethod()).name() == "Cash")
 	{
-		this->paymentMethod = new Cash;
 		this->getPaymentMethod()->performPayment();
 	}
 	else if (typeid(this->getPaymentMethod()).name() == "CreditCard")
