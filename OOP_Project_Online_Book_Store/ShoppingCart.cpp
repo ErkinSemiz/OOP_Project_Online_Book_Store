@@ -5,6 +5,7 @@
 #include "CreditCard.h"
 #include "Cash.h"
 #include "Check.h"
+#include <typeinfo>
 
 /*! Shopping Cart constructor. */
 ShoppingCart::ShoppingCart()
@@ -181,8 +182,8 @@ Shows the invoice to the customer.
 */
 void ShoppingCart::showInvoice()
 {
-	// cout << "The payment method is: " << this->getPaymentMethod() << endl;
-	cout << "The procucts are: " << endl;
+	cout << "The payment method is: " << typeid(this->getPaymentMethod()).name() << endl;
+	cout << "The products are: " << endl;
 	auto iterator = productsToPurchase.begin();
 	for (int i = 0; i < productsToPurchase.size(); i++)
 	{
@@ -192,10 +193,24 @@ void ShoppingCart::showInvoice()
 		iterator = next(productsToPurchase.begin(), i);
 	}
 	cout << endl;
-	//To do payment method detaylarýný yazdýrmak için Payment polymorphic yapýda olmalý.
-
-
-
+	if (typeid(this->getPaymentMethod()).name() == "Cash")
+	{
+		this->paymentMethod = new Cash;
+		this->getPaymentMethod()->performPayment();
+	}
+	else if (typeid(this->getPaymentMethod()).name() == "CreditCard")
+	{
+		this->getPaymentMethod()->performPayment();
+		cout << "The card number is: " << static_cast<CreditCard*>(this->getPaymentMethod())->getNumber();
+		cout << "The card type is: " << static_cast<CreditCard*>(this->getPaymentMethod())->getType();
+		cout << "The card's expiration date is: " << static_cast<CreditCard*>(this->getPaymentMethod())->getExpDate();
+	}
+	else if (typeid(this->getPaymentMethod()).name() == "Check")
+	{
+		this->getPaymentMethod()->performPayment();
+		cout << "The Check's name is: " << static_cast<Check*>(this->getPaymentMethod())->getName();
+		cout << "The Check's Bank Id is: " << static_cast<Check*>(this->getPaymentMethod())->getBankID();
+	}
 }
 /*!
 \return the payment method to be used by the customer.
