@@ -13,6 +13,7 @@ using namespace std;
 class Customer
 {
 private:
+	static int totalCustomer;
 	long customerID;  /*!< Customer ID */ 
 	string name; /*!< Customer name */ 
 	string adress; /*!< Customer adress */ 

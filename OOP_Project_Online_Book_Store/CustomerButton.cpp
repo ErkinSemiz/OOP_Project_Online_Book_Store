@@ -20,6 +20,7 @@ void CustomerButton::Add(list<Customer>& customers)
 	string _password;
 	Customer* customer = new Customer();
 	cout << "Enter name : ";
+	cin.ignore();
 	getline(cin, _name);
 	customer->setName(_name);
 	cout << "Enter adress : ";
@@ -35,6 +36,7 @@ void CustomerButton::Add(list<Customer>& customers)
 	cin >> _username;
 	customer->setUsername(_username);
 	cout << "Enter password : ";
+	cin.ignore();
 	getline(cin, _password);
 	customer->setPassword(_password);
 	customers.push_back(*customer);

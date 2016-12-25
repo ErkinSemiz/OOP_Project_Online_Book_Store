@@ -10,10 +10,10 @@ ProductToPurchase::ProductToPurchase()
 
 ProductToPurchase::~ProductToPurchase()
 {
-	delete product;
+	//delete product;
 }
 /*! \return The product to purchase. */
-Product * ProductToPurchase::getProduct() const
+Product * ProductToPurchase::getProduct()
 {
 	return product;
 }

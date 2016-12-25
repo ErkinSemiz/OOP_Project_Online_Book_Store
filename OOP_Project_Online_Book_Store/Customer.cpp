@@ -1,9 +1,12 @@
 #include "Customer.h"
 
+int Customer::totalCustomer = 0;
 
 /*! Customer constructor. */
 Customer::Customer()
 {
+	bonus = 0;
+	customerID = ++totalCustomer;
 }
 
 /*! Customer destructor. */

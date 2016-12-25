@@ -19,7 +19,7 @@ public:
 	~ProductToPurchase();
 
 	//! Return product
-	Product* getProduct() const;
+	Product* getProduct();
 
 	//! Set product
 	void setProduct(Product* product);

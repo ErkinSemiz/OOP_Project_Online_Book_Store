@@ -59,19 +59,37 @@ void ShoppingCart::addProduct(Product* product)
 */
 void ShoppingCart::removeProduct(Product* product)
 {
-	auto iterator = find(productsToPurchase.begin(), productsToPurchase.end(), product);
-	if ((*iterator)->getProduct() == product)
+	//auto iterator = find(productsToPurchase.begin(), productsToPurchase.end(), product);
+	//if ((*iterator)->getProduct() == product)
+	//{
+	//	cout << "How many " << product->getName() << " item do you want to delete ?" << endl;
+	//	int delquan;
+	//	cin >> delquan;
+	//	if (delquan<(*iterator)->getQuantity())
+	//	{
+	//		(*iterator)->setQuantity((*iterator)->getQuantity() - delquan);
+	//	}
+	//	else
+	//	{
+	//		productsToPurchase.erase(iterator);
+	//	}
+	//}
+	auto iterator = productsToPurchase.begin();
+	for (int i = 0; i < productsToPurchase.size(); i++)
 	{
-		cout << "How many " << product->getName() << " item do you want to delete ?" << endl;
-		int delquan;
-		cin >> delquan;
-		if (delquan<(*iterator)->getQuantity())
+		if ((*iterator)->getProduct() == product)
 		{
-			(*iterator)->setQuantity((*iterator)->getQuantity() - delquan);
-		}
-		else
-		{
-			productsToPurchase.erase(iterator);
+			cout << "How many " << product->getName() << " item do you want to delete ?" << endl;
+			int delquan;
+			cin >> delquan;
+			if (delquan<(*iterator)->getQuantity())
+			{
+				(*iterator)->setQuantity((*iterator)->getQuantity() - delquan);
+			}
+			else
+			{
+				productsToPurchase.erase(iterator);
+			}
 		}
 	}
 }
