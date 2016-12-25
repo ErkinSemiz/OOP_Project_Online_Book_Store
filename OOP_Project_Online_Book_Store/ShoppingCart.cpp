@@ -59,21 +59,21 @@ void ShoppingCart::addProduct(Product* product)
 */
 void ShoppingCart::removeProduct(Product* product)
 {
-		auto iterator = find(productsToPurchase.begin(), productsToPurchase.end(), product);
-		if((*iterator)->getProduct() == product)
+	auto iterator = find(productsToPurchase.begin(), productsToPurchase.end(), product);
+	if ((*iterator)->getProduct() == product)
+	{
+		cout << "How many " << product->getName() << " item do you want to delete ?" << endl;
+		int delquan;
+		cin >> delquan;
+		if (delquan<(*iterator)->getQuantity())
 		{
-			cout << "How many " << product->getName() << " item do you want to delete ?" << endl;
-			int delquan;
-			cin >> delquan;
-			if(delquan<(*iterator)->getQuantity())
-			{
-				(*iterator)->setQuantity((*iterator)->getQuantity() - delquan);
-			}
-			else
-			{
-				productsToPurchase.erase(iterator);
-			}
+			(*iterator)->setQuantity((*iterator)->getQuantity() - delquan);
 		}
+		else
+		{
+			productsToPurchase.erase(iterator);
+		}
+	}
 }
 /*!
 Performs the payment for the items in the Shopping Cart.
@@ -82,13 +82,13 @@ void ShoppingCart::placeOrder()
 {
 	double totalPrice = 0;
 	auto iterator = productsToPurchase.begin();
-	for (int i = 0; i < productsToPurchase.size();i++)
+	for (int i = 0; i < productsToPurchase.size(); i++)
 	{
 		totalPrice += (*iterator)->getQuantity() * (*iterator)->getProduct()->getPrice();
-		iterator = next(productsToPurchase.begin(),i);
+		iterator = next(productsToPurchase.begin(), i);
 	}
-	
-	
+
+
 
 	cout << "What is your payment method ?"
 		<< "1.)Credit Card" << endl
@@ -105,41 +105,7 @@ void ShoppingCart::placeOrder()
 	string ed;
 	string _name;
 	string _bankID;
-	
-	//switch (checkPayment) {
-	//case 1:
-	//	CreditCard* Card = new CreditCard();
-	//	cout << "Please Enter Card Number : ";
-	//	long cn;
-	//	cin >> cn;
-	//	Card->setNumber(cn);
-	//	cout << "Please Enter Type Of The Card: ";		
-	//	getline(cin, type);
-	//	Card->setType(type);
-	//	cout << "Please Enter The Expire Date: ";		
-	//	getline(cin, ed);
-	//	Card->setAmount(totalPrice);
-	//	Card->setExpDate(ed);
-	//	setPaymentMethod(Card);
-	//	break;
-	//case 2:
-	//	Cash* _Cash = new Cash();
-	//	_Cash->setAmount(totalPrice);
-	//	setPaymentMethod(_Cash);
-	//	break;
-	//case 3:
-	//	Check* _Check = new Check();
-	//	cout << "Please Enter Check Name : ";		
-	//	cin >> _name;
-	//	_Check->setName(_name);
-	//	cout << "Please Enter The Bank ID : ";		
-	//	cin >> _bankID;
-	//	_Check->setAmount(totalPrice);
-	//	setPaymentMethod(_Check);
-	//	break;
-	//default:
-	//	break;
-	//}
+
 	if (checkPayment == 1) {
 		CreditCard* Card = new CreditCard();
 		cout << "Please Enter Card Number : ";
@@ -172,16 +138,13 @@ void ShoppingCart::placeOrder()
 	}
 	getPaymentMethod()->performPayment();
 	this->customer->sendBill();
-	//typedef list<ProductToPurchase*>::const_iterator iterator;
-	//list<ProductToPurchase*>::const_iterator iterator;
-
-	//auto iterator = productsToPurchase.begin();
 	for (iterator = productsToPurchase.begin(); iterator != productsToPurchase.end(); iterator++)
 	{
 		delete(*iterator);
 	}
+	delete(*iterator);
 	productsToPurchase.clear();
-	
+
 }
 /*!
 Cancels the order and empties the shopping cart.
@@ -204,7 +167,7 @@ void ShoppingCart::printProducts() const
 	auto iterator = productsToPurchase.begin();
 	for (int i = 0; i < productsToPurchase.size(); i++)
 	{
-		cout << "The name of the product: "<< (*iterator)->getProduct()->getName()<<endl;
+		cout << "The name of the product: " << (*iterator)->getProduct()->getName() << endl;
 		cout << "The quantity of the product: " << (*iterator)->getQuantity() << endl;
 		cout << "The price of the product (per quantity): " << (*iterator)->getProduct()->getPrice() << endl;
 		iterator = next(productsToPurchase.begin(), i);
@@ -228,6 +191,7 @@ void ShoppingCart::showInvoice()
 	cout << endl;
 	if (typeid(this->getPaymentMethod()).name() == "Cash")
 	{
+		this->paymentMethod = new Cash;
 		this->getPaymentMethod()->performPayment();
 	}
 	else if (typeid(this->getPaymentMethod()).name() == "CreditCard")

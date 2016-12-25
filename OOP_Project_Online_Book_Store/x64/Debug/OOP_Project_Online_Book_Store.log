@@ -1,7 +1,7 @@
-﻿Build started 25.12.2016 15:49:55.
+﻿Build started 25.12.2016 16:16:08.
      1>Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt CustomerButton.cpp ShoppingCart.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ShoppingCart.cpp
          ShoppingCart.cpp
      1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(3134): error C2446: '==': no conversion from 'Product *const ' to 'ProductToPurchase *'
          c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(3134): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
@@ -24,10 +24,8 @@
                      _Ty=Product *
                  ]
      1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility(3134): error C2440: '==': cannot convert from 'Product *const ' to 'ProductToPurchase *'
-         CustomerButton.cpp
-         Generating Code...
      1>Done Building Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.27
+Time Elapsed 00:00:00.52
