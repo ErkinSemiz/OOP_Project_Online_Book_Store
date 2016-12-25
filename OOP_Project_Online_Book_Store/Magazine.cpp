@@ -7,25 +7,25 @@ void Magazine::printProperties() const
 	cout << "The Magazine's Issue is: " << Issue << endl;
 	cout << "The Magazine's Type is: " << type << endl;
 }
-/*! Returns Issue */
+/*! \return The Issue of the Magazine */
 int Magazine::getIssue() const
 {
 	return Issue;
 }
 /*!
-/param Issue "Issue" variable of Magazine will be set
+\param Issue "Issue" variable of Magazine will be set
 */
 void Magazine::setIssue(int Issue)
 {
 	this->Issue = Issue;
 }
-/*! Returns type */
+/*! \return The type of the Magazine */
 string Magazine::getType() const
 {
 	return type;
 }
 /*!
-/param type "type" variable of Magazine will be set
+\param type "type" variable of Magazine will be set
 */
 void Magazine::setType(const string& type)
 {

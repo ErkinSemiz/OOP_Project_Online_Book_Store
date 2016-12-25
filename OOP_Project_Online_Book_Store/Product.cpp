@@ -1,36 +1,36 @@
 #include "Product.h"
 
-/*! Returns ID */
+/*! \return The ID of the Product */
 int Product::getID() const
 {
 	return ID;
 }
 /*! 
-/param ID "ID" variable of Product will be set
+\param ID "ID" variable of Product will be set
 */
 void Product::setID(int ID)
 {
 	this->ID = ID;
 }
-/*! Returns name */
+/*! \return The name of the Product */
 string Product::getName() const
 {
 	return name;
 }
 /*! 
-/param name "name" variable of Product will be set
+\param name "name" variable of Product will be set
 */
 void Product::setName(const string& name)
 {
 	this->name = name;
 }
-/*! Returns price */
+/*! \return The price of the Product  */
 double Product::getPrice() const
 {
 	return price;
 }
 /*!
-/param price "price" variable of Product will be set
+\param price "price" variable of Product will be set
 */
 void Product::setPrice(double price)
 {

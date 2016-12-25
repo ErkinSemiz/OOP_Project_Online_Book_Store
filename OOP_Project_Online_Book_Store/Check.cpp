@@ -1,21 +1,23 @@
 #include "Check.h"
 
 
-
+/*! Check constructor. */
 Check::Check()
 {
 }
 
-
+/*! Check destructor. */
 Check::~Check()
 {
 }
-
+/*! Performs the payment with check. */
 void Check::performPayment()
 {
 	cout << getAmount() << " is paid with check." << endl;
 }
-
+/*!
+\return The check name. 
+*/
 string Check::getName() const
 {
 	return name;
@@ -27,7 +29,9 @@ void Check::setName(const string & name)
 {
 	this->name = name;
 }
-
+/*!
+\return bankID of the check.
+*/
 string Check::getBankID() const
 {
 	return bankID;

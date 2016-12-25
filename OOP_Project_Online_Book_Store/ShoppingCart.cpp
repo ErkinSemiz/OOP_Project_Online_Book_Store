@@ -6,35 +6,43 @@
 #include "Cash.h"
 #include "Check.h"
 
-
+/*! Shopping Cart constructor. */
 ShoppingCart::ShoppingCart()
 {
 	customer = new Customer();
 }
 
-
+/*! Shopping Cart destructor. */
 ShoppingCart::~ShoppingCart()
 {
 	while (!productsToPurchase.empty()) {
 		productsToPurchase.pop_front();
 	}
 }
-
+/*!
+\param payment_method "paymentMethod" variable of the Shopping Cart will be set.
+*/
 void ShoppingCart::setPaymentMethod(Payment* const payment_method)
 {
 	paymentMethod = payment_method;
 }
-
+/*!
+\param customer "customer" variable of the Shopping Cart will be set.
+*/
 void ShoppingCart::setCustomer(Customer* const customer)
 {
 	this->customer = customer;
 }
-
+/*!
+\param is_bonus_used Sets whether any bonus will be used.
+*/
 void ShoppingCart::setBonusUsed(const bool is_bonus_used)
 {
 	isBonusUsed = is_bonus_used;
 }
-
+/*!
+\param product Adds a new product to the shopping cart.
+*/
 void ShoppingCart::addProduct(Product* product)
 {
 	ProductToPurchase* a = new ProductToPurchase();
@@ -45,7 +53,9 @@ void ShoppingCart::addProduct(Product* product)
 	a->setQuantity(productCount);
 	productsToPurchase.push_front(a);
 }
-
+/*!
+\param product Removes a product from the Shopping cart.
+*/
 void ShoppingCart::removeProduct(Product* product)
 {
 		auto iterator = find(productsToPurchase.begin(), productsToPurchase.end(), product);
@@ -64,7 +74,9 @@ void ShoppingCart::removeProduct(Product* product)
 			}
 		}
 }
-
+/*!
+Performs the payment for the items in the Shopping Cart.
+*/
 void ShoppingCart::placeOrder()
 {
 	double totalPrice = 0;
@@ -129,29 +141,72 @@ void ShoppingCart::placeOrder()
 	}
 	getPaymentMethod()->performPayment();
 	this->customer->sendBill();
-		//To Do listeyi bosaltýn ha
+	auto iterator = productsToPurchase.begin();
+	for (iterator = productsToPurchase.begin(); iterator != productsToPurchase.end(); iterator++)
+	{
+		delete(*iterator);
+	}
+	productsToPurchase.clear();
+	
 }
-
+/*!
+Cancels the order and empties the shopping cart.
+*/
 void ShoppingCart::cancelOrder()
 {
-	//To Do cout cancel edildi bosalt yine stackleri listeleri
+	cout << "The order has been canceled." << endl;
+	auto iterator = productsToPurchase.begin();
+	for (iterator = productsToPurchase.begin(); iterator != productsToPurchase.end(); iterator++)
+	{
+		delete(*iterator);
+	}
+	productsToPurchase.clear();
 }
-
+/*!
+Prints the products of the shopping cart.
+*/
 void ShoppingCart::printProducts() const
 {
-	//To do productsToPurchasedaki,product name ve quantityleri coutlýcaz 
+	auto iterator = productsToPurchase.begin();
+	for (int i = 0; i < productsToPurchase.size(); i++)
+	{
+		cout << "The name of the product: "<< (*iterator)->getProduct()->getName()<<endl;
+		cout << "The quantity of the product: " << (*iterator)->getQuantity() << endl;
+		cout << "The price of the product (per quantity): " << (*iterator)->getProduct()->getPrice() << endl;
+		iterator = next(productsToPurchase.begin(), i);
+	}
 }
-
+/*!
+Shows the invoice to the customer.
+*/
 void ShoppingCart::showInvoice()
 {
-	//To do faturaya iste payment detaylarý felandý coutlýcaz
-}
+	// cout << "The payment method is: " << this->getPaymentMethod() << endl;
+	cout << "The procucts are: " << endl;
+	auto iterator = productsToPurchase.begin();
+	for (int i = 0; i < productsToPurchase.size(); i++)
+	{
+		cout << "Product name: " << (*iterator)->getProduct()->getName() << endl;
+		cout << "Product ID: " << (*iterator)->getProduct()->getID() << endl;
+		cout << "The product's price: " << (*iterator)->getProduct()->getPrice() << endl;
+		iterator = next(productsToPurchase.begin(), i);
+	}
+	cout << endl;
+	//To do payment method detaylarýný yazdýrmak için Payment polymorphic yapýda olmalý.
 
+
+
+}
+/*!
+\return the payment method to be used by the customer.
+*/
 Payment* const& ShoppingCart::getPaymentMethod() const
 {
 	return paymentMethod;
 }
-
+/*!
+\return the customer that owns the Shopping Cart.
+*/
 Customer* const& ShoppingCart::getCustomer() const
 {
 	return customer;
