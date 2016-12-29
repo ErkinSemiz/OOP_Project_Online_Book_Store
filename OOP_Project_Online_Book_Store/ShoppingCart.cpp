@@ -196,34 +196,25 @@ Shows the invoice to the customer.
 */
 void ShoppingCart::showInvoice()
 {
-	cout << "The payment method is: " << typeid(this->getPaymentMethod()).name() << endl;
-	cout << "The products are: " << endl;
-	auto iterator = productsToPurchase.begin();
-	for (int i = 0; i < productsToPurchase.size(); i++)
+	//Show invoice product to purchase a degil payment methoda calismali
+	if (productsToPurchase.empty())
 	{
-		cout << "Product name: " << (*iterator)->getProduct()->getName() << endl;
-		cout << "Product ID: " << (*iterator)->getProduct()->getID() << endl;
-		cout << "The product's price: " << (*iterator)->getProduct()->getPrice() << endl;
-		iterator = next(productsToPurchase.begin(), i);
+		cout << "Purchase List Is Empty.Please Add Product First" << endl;
 	}
-	cout << endl;
-	if (typeid(this->getPaymentMethod()).name() == "Cash")
+	else
 	{
-		this->paymentMethod = new Cash;
+		cout << "The payment method is: " << typeid(this->getPaymentMethod()).name() << endl;
+		cout << "The products are: " << endl;
+		auto iterator = productsToPurchase.begin();
+		for (int i = 0; i < productsToPurchase.size(); i++)
+		{
+			cout << "Product name: " << (*iterator)->getProduct()->getName() << endl;
+			cout << "Product ID: " << (*iterator)->getProduct()->getID() << endl;
+			cout << "The product's price: " << (*iterator)->getProduct()->getPrice() << endl;
+			iterator = next(productsToPurchase.begin(), i);
+		}
+		cout << endl;
 		this->getPaymentMethod()->performPayment();
-	}
-	else if (typeid(this->getPaymentMethod()).name() == "CreditCard")
-	{
-		this->getPaymentMethod()->performPayment();
-		cout << "The card number is: " << static_cast<CreditCard*>(this->getPaymentMethod())->getNumber();
-		cout << "The card type is: " << static_cast<CreditCard*>(this->getPaymentMethod())->getType();
-		cout << "The card's expiration date is: " << static_cast<CreditCard*>(this->getPaymentMethod())->getExpDate();
-	}
-	else if (typeid(this->getPaymentMethod()).name() == "Check")
-	{
-		this->getPaymentMethod()->performPayment();
-		cout << "The Check's name is: " << static_cast<Check*>(this->getPaymentMethod())->getName();
-		cout << "The Check's Bank Id is: " << static_cast<Check*>(this->getPaymentMethod())->getBankID();
 	}
 }
 /*!
