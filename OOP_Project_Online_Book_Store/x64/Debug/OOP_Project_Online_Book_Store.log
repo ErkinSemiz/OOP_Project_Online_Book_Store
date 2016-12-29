@@ -1,31 +1,17 @@
-﻿Build started 29.12.2016 16:12:19.
-     1>Project "C:\Users\Tahir\Downloads\Compressed\OOP_Project_Online_Book_Store-07fcb0c26996ecf53912f2ac0e4666d695f45885\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" on node 2 (Build target(s)).
+﻿Build started 29.12.2016 16:25:51.
+     1>Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Book.cpp Cash.cpp Check.cpp CreditCard.cpp Customer.cpp CustomerButton.cpp Magazine.cpp MainProgramme.cpp MusicCD.cpp Payment.cpp Product.cpp ProductButton.cpp ProductToPurchase.cpp ShoppingCart.cpp
-         ShoppingCart.cpp
-         ProductToPurchase.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ProductButton.cpp
          ProductButton.cpp
-     1>c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\productbutton.cpp(15): warning C4101: '_prdID': unreferenced local variable
-     1>c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\productbutton.cpp(103): error C2039: 'getproduct': is not a member of 'Product'
-         c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
-     1>c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\productbutton.cpp(109): error C2039: 'getproduct': is not a member of 'Product'
-         c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
-     1>c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\productbutton.cpp(114): error C2039: 'getproduct': is not a member of 'Product'
-         c:\users\tahir\downloads\compressed\oop_project_online_book_store-07fcb0c26996ecf53912f2ac0e4666d695f45885\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
-         Product.cpp
-         Payment.cpp
-         MusicCD.cpp
-         MainProgramme.cpp
-         Magazine.cpp
-         CustomerButton.cpp
-         Customer.cpp
-         CreditCard.cpp
-         Check.cpp
-         Cash.cpp
-         Book.cpp
-         Generating Code...
-     1>Done Building Project "C:\Users\Tahir\Downloads\Compressed\OOP_Project_Online_Book_Store-07fcb0c26996ecf53912f2ac0e4666d695f45885\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(15): warning C4101: '_prdID': unreferenced local variable
+     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(104): error C2039: 'getproduct': is not a member of 'Product'
+         c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
+     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(110): error C2039: 'getproduct': is not a member of 'Product'
+         c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
+     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(115): error C2039: 'getproduct': is not a member of 'Product'
+         c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
+     1>Done Building Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:15.15
+Time Elapsed 00:00:01.76
