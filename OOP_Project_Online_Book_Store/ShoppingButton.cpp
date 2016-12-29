@@ -23,6 +23,7 @@ bool ShoppingButton::Login(list<Customer>& customers)
 	{		
 		if (_username == (*iterator).getUsername() && _password == (*iterator).getPassword())
 		{
+			shopping_cart->setCustomer(&*iterator);
 			return true;			
 			flag = 1;
 			break;
@@ -54,6 +55,7 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 			flag = 1;
 			cout << "Product added to your shopping cart." << endl;
 		}
+		iterator = next(products.begin(), (i + 1));
 	}
 	if (flag == 0)
 	{

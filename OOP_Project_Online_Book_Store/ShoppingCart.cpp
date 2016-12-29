@@ -10,7 +10,7 @@
 /*! Shopping Cart constructor. */
 ShoppingCart::ShoppingCart()
 {
-	customer = new Customer();
+	//customer = new Customer();
 }
 
 /*! Shopping Cart destructor. */
@@ -30,7 +30,7 @@ void ShoppingCart::setPaymentMethod(Payment* const payment_method)
 /*!
 \param customer "customer" variable of the Shopping Cart will be set.
 */
-void ShoppingCart::setCustomer(Customer* const customer)
+void ShoppingCart::setCustomer(Customer* customer)
 {
 	this->customer = customer;
 }

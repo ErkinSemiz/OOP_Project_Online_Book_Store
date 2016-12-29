@@ -38,6 +38,6 @@ public:
 	/*!
 	 Print informations of product to screen.
 	*/
-	 void printProperties() const;
+	virtual void printProperties() const;
 	virtual string getproduct() const;
 };

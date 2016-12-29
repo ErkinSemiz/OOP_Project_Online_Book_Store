@@ -3,7 +3,7 @@
 int Customer::totalCustomer = 0;
 
 /*! Customer constructor. */
-Customer::Customer()
+Customer::Customer(string _name, string _adress, string _phone, string _email, string _username, string _password):name(_name), adress(_adress), phone(_phone), email(_email), username(_username), password(_password)
 {
 	bonus = 0;
 	customerID = ++totalCustomer;

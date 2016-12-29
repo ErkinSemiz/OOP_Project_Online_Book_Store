@@ -24,7 +24,7 @@ private:
 	string password; /*!< Customer password for entering system */ 
 public:
 	//! Default constructor function
-	Customer();
+	Customer(string _name, string _adress, string _phone, string _email, string _username, string _password );
 	//! Default deconstructor function
 	~Customer();
 

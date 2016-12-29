@@ -97,26 +97,9 @@ void ProductButton::Show(list<Product*>& products) const
 	auto iterator = products.begin();
 	for (int i = 0; i < products.size(); i++)
 	{
-		cout << (i+1) << ". Product:\n";
+		cout << (i + 1) << ". Product:\n";
 		(*iterator)->printProperties();
-
-		if ((*iterator)->getproduct() == "Book")
-		{
-			cout << "Product(Book)'s Author: " << static_cast<Book*>(*iterator)->getAuthor()<<endl;
-			cout << "Product(Book)'s Publisher: " << static_cast<Book*>(*iterator)->getPublisher()<<endl;
-			cout << "Product(Book)'s Page Number: " << static_cast<Book*>(*iterator)->getPage() << endl;
-		}
-		else if((*iterator)->getproduct() == "Magazine")
-		{
-			cout << "Product(Magazine)'s Issue: " << static_cast<Magazine*>(*iterator)->getIssue()<< endl;
-			cout << "Product(Magazine)'s Type: " << static_cast<Magazine*>(*iterator)->getType() << endl;
-		}
-		else if ((*iterator)->getproduct() == "MusicCD")
-		{
-			cout << "Product(Music CD)'s Singer: " << static_cast<MusicCD*>(*iterator)->getSinger()<< endl;
-			cout << "Product(Music CD)'s Type: " << static_cast<MusicCD*>(*iterator)->getType() << endl;
-		}
-
-		iterator = next(products.begin(), (i+1));
+		iterator = next(products.begin(), (i + 1));
 	}
+	
 }

@@ -19,27 +19,28 @@ void CustomerButton::Add(list<Customer>& customers)
 	string _email;
 	string _username;
 	string _password;
-	Customer* customer = new Customer();
+	//Customer* customer = new Customer();
 	cout << "Enter name : ";
 	cin.ignore();
 	getline(cin, _name);
-	customer->setName(_name);
+	//customer->setName(_name);
 	cout << "Enter adress : ";
 	getline(cin, _adress);
-	customer->setAdress(_adress);
+	//customer->setAdress(_adress);
 	cout << "Enter phone : ";
 	getline(cin, _phone);
-	customer->setPhone(_phone);
+	//customer->setPhone(_phone);
 	cout << "Enter email : ";
 	cin >> _email;
-	customer->setEmail(_email);
+	//customer->setEmail(_email);
 	cout << "Enter username : ";
 	cin >> _username;
-	customer->setUsername(_username);
+	//customer->setUsername(_username);
 	cout << "Enter password : ";
 	cin.ignore();
 	getline(cin, _password);
-	customer->setPassword(_password);
+	//customer->setPassword(_password);
+	Customer* customer = new Customer(_name, _adress,_phone,_email,_username,_password);
 	customers.push_back(*customer);
 }
 

@@ -4,6 +4,7 @@ Properties of the Magazine object will be printed
 */
 void Magazine::printProperties() const
 {
+	Product::printProperties();
 	cout << "The Magazine's Issue is: " << Issue << endl;
 	cout << "The Magazine's Type is: " << type << endl;
 }

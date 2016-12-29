@@ -4,6 +4,7 @@ Properties of the MusicCD object will be printed
 */
 void MusicCD::printProperties() const
 {
+	Product::printProperties();
 	cout << "The Singer is: " << singer << endl;
 	cout << "The Type is: " << type << endl;
 }

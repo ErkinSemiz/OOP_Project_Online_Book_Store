@@ -13,7 +13,14 @@ list<Product*> products;
 int main() {
 	CustomerButton customerButton;
 	ProductButton productButton;
-	ShoppingButton shoppingButton; 
+	ShoppingButton shoppingButton;
+
+	Customer *customer = new Customer("bilgehan", "buyukdere", "123456789", "bilg@esk.com", "bilgehan", "123");
+	customers.push_back(*customer);
+	customer = new Customer("erkin", "hastane", "123456789", "erk@esk.com", "erkin", "123");
+	customers.push_back(*customer);
+	customer = new Customer("tahir", "kutahya", "123456789", "tah@esk.com", "tahir", "123");
+	customers.push_back(*customer);
 
 	bool loggedIn = false;
 	while (true) {
@@ -106,43 +113,44 @@ int main() {
 					}
 
 				}
-			}			
-				else if (choice == 2) {
-					shoppingButton.AddProduct(products);
-				}
-				else if (choice == 3) {
-					shoppingButton.RemoveProduct(products);
-				}
-				else if (choice == 4) {
-					productButton.Show(products);
-				}
-				else if (choice == 5) {
-					shoppingButton.ListShoppingCart(products);
-				}
-				else if (choice == 6) {
-					shoppingButton.ShowBonus();
-				}
-				else if (choice == 7) {
-					//TO DO
-				}
-				else if (choice == 8) {
-					shoppingButton.PlaceOrder();
-				}
-				else if (choice == 9) {
-					shoppingButton.CancelOrder();
-				}
-				else if (choice == 10) {
-					shoppingButton.ShowInvoice();
-				}
-				else if (choice == 11)
-				{
-					system("pause");
-				}
-				}//Shopping Menu
-		//cout << "Press any key to return the menu...";
-		//if (getchar())
-		//{
-		//	system("cls");
-		//}
+			}
+			else if (choice == 2) {
+				shoppingButton.AddProduct(products);
+			}
+			else if (choice == 3) {
+				shoppingButton.RemoveProduct(products);
+			}
+			else if (choice == 4) {
+				productButton.Show(products);
+			}
+			else if (choice == 5) {
+				shoppingButton.ListShoppingCart(products);
+			}
+			else if (choice == 6) {
+				shoppingButton.ShowBonus();
+			}
+			else if (choice == 7) {
+				//TO DO
+			}
+			else if (choice == 8) {
+				shoppingButton.PlaceOrder();
+			}
+			else if (choice == 9) {
+				shoppingButton.CancelOrder();
+			}
+			else if (choice == 10) {
+				shoppingButton.ShowInvoice();
+			}
+			else if (choice == 11)
+			{
+				system("pause");
+			}
+		}//Shopping Menu
+//cout << "Press any key to return the menu...";
+//if (getchar())
+//{
+//	system("cls");
+//}
+		//system("cls");
 	}//main while
 }//main

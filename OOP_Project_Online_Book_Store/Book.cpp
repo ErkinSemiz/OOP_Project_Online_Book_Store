@@ -11,6 +11,7 @@ Book::~Book()
 }
 void Book::printProperties() const
 {
+	Product::printProperties();
 	cout << "The Book's Author is: " << author << endl;
 	cout << "The Book's Publisher is: " << publisher << endl;
 	cout << "The Book's Page is: " << page << endl;
