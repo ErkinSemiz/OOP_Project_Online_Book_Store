@@ -3,6 +3,12 @@
 /*!
 Properties of the Book object will be printed
 */
+Book::Book()
+{
+}
+Book::~Book()
+{
+}
 void Book::printProperties() const
 {
 	cout << "The Book's Author is: " << author << endl;
@@ -44,4 +50,9 @@ int Book::getPage() const
 void Book::setPage(int page)
 {
 	this->page = page;
+}
+
+string Book::getproduct() const
+{
+	return "Book";
 }

@@ -25,4 +25,5 @@ public:
 	string getType() const;
 	//! Sets Type of the magazine.
 	void setType(const string& type);
+	string getproduct() const;
 };

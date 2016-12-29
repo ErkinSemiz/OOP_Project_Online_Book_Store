@@ -5,6 +5,7 @@
 #include "Product.h"
 #include "CustomerButton.h"
 #include "ProductButton.h"
+#include "ShoppingButton.h"
 
 list<Customer> customers;
 list<Product*> products;
@@ -12,6 +13,8 @@ list<Product*> products;
 int main() {
 	CustomerButton customerButton;
 	ProductButton productButton;
+	ShoppingButton shoppingButton; 
+
 	bool loggedIn = false;
 	while (true) {
 		cout << "Menu\n----\n";
@@ -66,13 +69,22 @@ int main() {
 			cout << "6. Show Bonus" << endl;
 			cout << "7. Use Bonus" << endl;
 			cout << "8. Place Order" << endl;
-			cout << "9. Canscel Order" << endl;
+			cout << "9. Cancel Order" << endl;
 			cout << "10. Show Invoice" << endl;
 			cout << "11. Quit" << endl;
 			cout << "Choose one: ";
 			cin >> choice;
 			if (choice == 1) {
-				//TO DO
+				if (shoppingButton.Login(customers) == true)
+				{
+					loggedIn = true;
+					cout << "Success! " << endl;
+				}
+				else
+				{
+					loggedIn = false;
+					cout << "Invalid Username or Password!" << endl;
+				}
 			}
 			else if (!loggedIn) {
 				cout << "\nPlease log in to system first." << endl;
@@ -83,40 +95,54 @@ int main() {
 				cin >> subChoice;
 
 				if (subChoice == 1) {
-					//TO DO call login method of ShoppingButton
+					if (shoppingButton.Login(customers) == true)
+					{
+						loggedIn = true;
+						cout << "Success! " << endl;
+					}
+					else {
+						loggedIn = false;
+						cout << "Invalid Username or Password!" << endl;
+					}
 
 				}
-			}
-			else if (choice == 2) {
-				//TO DO
-			}
-			else if (choice == 3) {
-				//TO DO
-			}
-			else if (choice == 4) {
-				//TO DO
-			}
-			else if (choice == 5) {
-				//TO DO
-			}
-			else if (choice == 6) {
-				//TO DO
-			}
-			else if (choice == 7) {
-				//TO DO
-			}
-			else if (choice == 8) {
-				//TO DO
-			}
-			else if (choice == 9) {
-				//TO DO
-			}
-			else if (choice == 10) {
-				//TO DO
-			}
-
-
-			system("cls");
-		}//Shopping Menu
+			}			
+				else if (choice == 2) {
+					shoppingButton.AddProduct(products);
+				}
+				else if (choice == 3) {
+					shoppingButton.RemoveProduct(products);
+				}
+				else if (choice == 4) {
+					productButton.Show(products);
+				}
+				else if (choice == 5) {
+					shoppingButton.ListShoppingCart(products);
+				}
+				else if (choice == 6) {
+					shoppingButton.ShowBonus();
+				}
+				else if (choice == 7) {
+					//TO DO
+				}
+				else if (choice == 8) {
+					shoppingButton.PlaceOrder();
+				}
+				else if (choice == 9) {
+					shoppingButton.CancelOrder();
+				}
+				else if (choice == 10) {
+					shoppingButton.ShowInvoice();
+				}
+				else if (choice == 11)
+				{
+					system("pause");
+				}
+				}//Shopping Menu
+		//cout << "Press any key to return the menu...";
+		//if (getchar())
+		//{
+		//	system("cls");
+		//}
 	}//main while
 }//main

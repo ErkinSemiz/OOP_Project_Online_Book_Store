@@ -31,3 +31,8 @@ void Magazine::setType(const string& type)
 {
 	this->type = type;
 }
+
+string Magazine::getproduct() const
+{
+	return "Magazine";
+}

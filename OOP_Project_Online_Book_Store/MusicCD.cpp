@@ -31,3 +31,8 @@ void MusicCD::setType(const string& type)
 {
 	this->type = type;
 }
+
+string MusicCD::getproduct() const
+{
+	return "MusicCD";
+}

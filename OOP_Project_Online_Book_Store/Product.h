@@ -13,6 +13,7 @@ using namespace std;
 class Product
 {
 private:
+	static int totalProduct;
 	int ID; /*!< ID of product */ 
 	string name; /*!< Name of product */ 
 	double price; /*!< Price of product */ 
@@ -24,7 +25,7 @@ public:
 	//! Return ID of product.
 	int getID() const;
 	//! Set ID of product.
-	void setID(int ID);
+	void setID( int ID);
 	//! Get name of product.
 	string getName() const;
 	//! Set name of product.
@@ -37,5 +38,6 @@ public:
 	/*!
 	 Print informations of product to screen.
 	*/
-	virtual void printProperties() const;
+	 void printProperties() const;
+	virtual string getproduct() const;
 };

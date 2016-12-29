@@ -10,4 +10,3 @@ public:
 	void Add(list<Customer>& customers);
 	void Show(list<Customer>& customers) const;
 };
-

@@ -1,6 +1,7 @@
 #include "CustomerButton.h"
 #include <string>
 
+
 CustomerButton::CustomerButton()
 {
 }
@@ -48,13 +49,13 @@ void CustomerButton::Show(list<Customer>& customers) const
 	auto iterator = customers.begin();
 	for (int i = 0; i < customers.size(); i++)
 	{
-		cout << i << ". Customer:\n";
+		cout << (i+1) << ". Customer:\n";
 		cout << "Customer ID: " << (*iterator).getCustomerID() << endl;
 		cout << "Customer name: " << (*iterator).getName() << endl;
-		cout << "Customer adress: " << (*iterator).getName() << endl;
+		cout << "Customer adress: " << (*iterator).getAdress() << endl;
 		cout << "Customer phone: " << (*iterator).getPhone() << endl;
 		cout << "Customer bonus: " << (*iterator).getBonus() << endl;
 		cout << "Customer email: " << (*iterator).getEmail() << endl << endl;
-		iterator = next(customers.begin(), i);
+		iterator = next(customers.begin(), (i+1));
 	}
 }

@@ -34,5 +34,6 @@ public:
 	int getPage()const;
 	//! Set page count of book.
 	void setPage(int page);
+	string getproduct() const;
 };
 

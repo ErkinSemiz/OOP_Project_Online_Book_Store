@@ -48,7 +48,7 @@ void ShoppingCart::addProduct(Product* product)
 {
 	ProductToPurchase* a = new ProductToPurchase();
 	a->setProduct(product);
-	cout << "How many: " << product->getName() << "do you want to add : ";
+	cout << "How many: " << product->getName() << " do you want to add : ";
 	int productCount;
 	cin >> productCount;
 	a->setQuantity(productCount);
@@ -134,7 +134,6 @@ void ShoppingCart::placeOrder()
 		getline(cin, type);
 		Card->setType(type);
 		cout << "Please Enter The Expire Date: ";
-		getline(cin, ed);
 		Card->setAmount(totalPrice);
 		Card->setExpDate(ed);
 		setPaymentMethod(Card);
@@ -175,6 +174,7 @@ void ShoppingCart::cancelOrder()
 	{
 		delete(*iterator);
 	}
+	delete(*iterator);
 	productsToPurchase.clear();
 }
 /*!

@@ -25,4 +25,5 @@ public:
 	string getType() const;
 	//! Sets the type of the MusicCd.
 	void setType(const string& type);
+	string getproduct() const;
 };

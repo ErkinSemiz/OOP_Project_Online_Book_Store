@@ -1,17 +1,45 @@
-﻿Build started 29.12.2016 16:25:51.
-     1>Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" on node 2 (Build target(s)).
+﻿Build started 29.12.2016 17:39:33.
+     1>Project "C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ProductButton.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Book.cpp Cash.cpp Check.cpp CreditCard.cpp Customer.cpp CustomerButton.cpp Magazine.cpp MainProgramme.cpp MusicCD.cpp Payment.cpp Product.cpp ProductButton.cpp ProductToPurchase.cpp ShoppingButton.cpp ShoppingCart.cpp
+         ShoppingCart.cpp
+         ShoppingButton.cpp
+         ProductToPurchase.cpp
          ProductButton.cpp
-     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(15): warning C4101: '_prdID': unreferenced local variable
-     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(104): error C2039: 'getproduct': is not a member of 'Product'
-         c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
-     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(110): error C2039: 'getproduct': is not a member of 'Product'
-         c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
-     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(115): error C2039: 'getproduct': is not a member of 'Product'
-         c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\product.h(14): note: see declaration of 'Product'
-     1>Done Building Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\tahir\downloads\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(15): warning C4101: '_prdID': unreferenced local variable
+         Product.cpp
+         Payment.cpp
+         MusicCD.cpp
+         MainProgramme.cpp
+         Magazine.cpp
+         CustomerButton.cpp
+         Customer.cpp
+         CreditCard.cpp
+         Check.cpp
+         Cash.cpp
+         Book.cpp
+         Generating Code...
+     1>c:\users\tahir\downloads\oop_project_online_book_store\oop_project_online_book_store\shoppingbutton.cpp(37): warning C4715: 'ShoppingButton::Login': not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.lib" /MACHINE:X64 x64\Debug\Book.obj
+         x64\Debug\Cash.obj
+         x64\Debug\Check.obj
+         x64\Debug\CreditCard.obj
+         x64\Debug\Customer.obj
+         x64\Debug\CustomerButton.obj
+         x64\Debug\Magazine.obj
+         x64\Debug\MainProgramme.obj
+         x64\Debug\MusicCD.obj
+         x64\Debug\Payment.obj
+         x64\Debug\Product.obj
+         x64\Debug\ProductButton.obj
+         x64\Debug\ProductToPurchase.obj
+         x64\Debug\ShoppingButton.obj
+         x64\Debug\ShoppingCart.obj
+         LINK : C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.exe not found or not built by the last incremental link; performing full link
+         OOP_Project_Online_Book_Store.vcxproj -> C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.exe
+     1>Done Building Project "C:\Users\Tahir\Downloads\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.76
+Time Elapsed 00:00:18.61
