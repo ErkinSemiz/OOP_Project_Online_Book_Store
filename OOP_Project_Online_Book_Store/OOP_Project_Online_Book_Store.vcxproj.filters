@@ -51,6 +51,9 @@
     <ClInclude Include="CustomerButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ProductButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Product.cpp">
@@ -90,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainProgramme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

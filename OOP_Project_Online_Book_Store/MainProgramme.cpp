@@ -4,12 +4,14 @@
 #include "ShoppingCart.h"
 #include "Product.h"
 #include "CustomerButton.h"
+#include "ProductButton.h"
 
 list<Customer> customers;
 list<Product*> products;
 
 int main() {
 	CustomerButton customerButton;
+	ProductButton productButton;
 	bool loggedIn = false;
 	while (true) {
 		cout << "Menu\n----\n";
@@ -45,10 +47,11 @@ int main() {
 			cout << "Choose one: ";
 			cin >> choice;
 			if (choice == 1) {
-				//TO DO
+				productButton.Add(products);
 			}
 			else if (choice == 2) {
-				//TO DO
+				productButton.Show(products);
+				system("pause");
 			}
 			system("cls");
 		}
@@ -83,35 +86,36 @@ int main() {
 					//TO DO call login method of ShoppingButton
 
 				}
-				else if (choice == 2) {
-					//TO DO
-				}
-				else if (choice == 3) {
-					//TO DO
-				}
-				else if (choice == 4) {
-					//TO DO
-				}
-				else if (choice == 5) {
-					//TO DO
-				}
-				else if (choice == 6) {
-					//TO DO
-				}
-				else if (choice == 7) {
-					//TO DO
-				}
-				else if (choice == 8) {
-					//TO DO
-				}
-				else if (choice == 9) {
-					//TO DO
-				}
-				else if (choice == 10) {
-					//TO DO
-				}
-
 			}
+			else if (choice == 2) {
+				//TO DO
+			}
+			else if (choice == 3) {
+				//TO DO
+			}
+			else if (choice == 4) {
+				//TO DO
+			}
+			else if (choice == 5) {
+				//TO DO
+			}
+			else if (choice == 6) {
+				//TO DO
+			}
+			else if (choice == 7) {
+				//TO DO
+			}
+			else if (choice == 8) {
+				//TO DO
+			}
+			else if (choice == 9) {
+				//TO DO
+			}
+			else if (choice == 10) {
+				//TO DO
+			}
+
+
 			system("cls");
 		}//Shopping Menu
 	}//main while
