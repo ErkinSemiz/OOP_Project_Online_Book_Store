@@ -56,7 +56,7 @@ void CreditCard::setExpDate(const string & expDate)
 void CreditCard::performPayment()
 {
 	cout << getAmount() << " is paid with credit card." << endl;
-	cout << "The card number is: " << getNumber();
-	cout << "The card type is: " <<getType();
-	cout << "The card's expiration date is: " <<getExpDate();
+	cout << "The card number is: " << getNumber() << endl;
+	cout << "The card type is: " << getType() << endl;
+	cout << "The card's expiration date is: " << getExpDate() << endl;
 }

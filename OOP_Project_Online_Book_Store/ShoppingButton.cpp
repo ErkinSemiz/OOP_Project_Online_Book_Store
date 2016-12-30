@@ -15,7 +15,8 @@ bool ShoppingButton::Login(list<Customer>& customers)
 	int flag = 0;
 	auto iterator = customers.begin();
 	cout << "Please Enter Your Username: ";
-	cin.ignore();
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	//discard characters until newline is found
 	getline(cin, _username);
 	cout << "Please Enter Your Password: ";
 	getline(cin, _password);
@@ -39,10 +40,11 @@ bool ShoppingButton::Login(list<Customer>& customers)
 
 void ShoppingButton::AddProduct(list<Product*>& products)
 {
+
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	int flag = 0;
 	string _productname;
 	cout << "Enter the name of the product that you wish to add: ";
-	cin.ignore();
 	getline(cin, _productname);
 	auto iterator = products.begin();
 	for (int i = 0; i < products.size(); i++)
@@ -61,15 +63,16 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 	{
 		cout << "Product not found." << endl;
 	}
-
 }
 
 void ShoppingButton::RemoveProduct(list<Product*>& products)
-{
+{	
+
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	int flag = 0;
 	string _productname;
 	cout << "Enter the name of the product that you wish to remove: ";
-	cin.ignore();
+	
 	getline(cin, _productname);
 	auto iterator = products.begin();
 	for (int i = 0; i < products.size(); i++)
@@ -80,6 +83,7 @@ void ShoppingButton::RemoveProduct(list<Product*>& products)
 			flag = 1;
 			cout << "Product removed from your shopping cart." << endl;
 		}
+		iterator = next(products.begin(), i + 1);
 	}
 	if (flag == 0)
 	{
@@ -95,6 +99,11 @@ void ShoppingButton::ListShoppingCart(list<Product*>& products)
 void ShoppingButton::ShowBonus()
 {
 	this->shopping_cart->getCustomer()->getBonus();
+}
+
+void ShoppingButton::UseBonus()
+{
+	shopping_cart->setBonusUsed(true);
 }
 
 void ShoppingButton::PlaceOrder()

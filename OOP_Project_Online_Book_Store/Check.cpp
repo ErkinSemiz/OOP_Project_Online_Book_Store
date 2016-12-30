@@ -15,8 +15,8 @@ void Check::performPayment()
 {
 
 	cout << getAmount() << " is paid with check." << endl;
-	cout << "The Check's name is: " <<getName();
-	cout << "The Check's Bank Id is: " <<getBankID();
+	cout << "The Check's name is: " << getName() << endl;
+	cout << "The Check's Bank Id is: " << getBankID() << endl;
 }
 /*!
 \return The check name. 

@@ -20,7 +20,7 @@ int main() {
 
 	Customer *customer = new Customer("bilgehan", "buyukdere", "123456789", "bilg@esk.com", "bilgehan", "123");
 	customers.push_back(*customer);
-	customer = new Customer("erkin", "hastane", "123456789", "erk@esk.com", "erkin", "123");
+	customer = new Customer("erkin", "hastane", "123456789", "erk@esk.com", "a", "a");
 	customers.push_back(*customer);
 	customer = new Customer("tahir", "kutahya", "123456789", "tah@esk.com", "tahir", "123");
 	customers.push_back(*customer);
@@ -97,7 +97,9 @@ int main() {
 			cin >> choice;
 			system("cls");
 			if (choice == 1) {
-				if (shoppingButton.Login(customers) == true)
+				if (loggedIn)
+					cout << "Already logged in." << endl;
+				else if (shoppingButton.Login(customers) == true)
 				{
 					loggedIn = true;
 					cout << "Success! " << endl;
@@ -143,12 +145,9 @@ int main() {
 			}
 			else if (choice == 6) {
 				cout << shopping_cart.getCustomer()->getName() << "' s Bonus: " << shopping_cart.getCustomer()->getBonus() << endl;
-				
-				//shoppingButton.ShowBonus();
 			}
 			else if (choice == 7) {
-				shopping_cart.getCustomer()->useBonus();
-				//TO DO
+				shoppingButton.UseBonus();
 			}
 			else if (choice == 8) {
 				shoppingButton.PlaceOrder();

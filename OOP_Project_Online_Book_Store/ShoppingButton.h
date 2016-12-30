@@ -14,7 +14,7 @@ public:
 	void RemoveProduct(list<Product*>& products);
 	void ListShoppingCart(list<Product*>& products);
 	void ShowBonus();
-	//void UseBonus();
+	void UseBonus();
 	void PlaceOrder();
 	void CancelOrder();
 	void ShowInvoice();

@@ -5,6 +5,7 @@ int Customer::totalCustomer = 0;
 /*! Customer constructor. */
 Customer::Customer(string _name, string _adress, string _phone, string _email, string _username, string _password):name(_name), adress(_adress), phone(_phone), email(_email), username(_username), password(_password)
 {
+	
 	bonus = 0;
 	customerID = ++totalCustomer;
 }
@@ -105,17 +106,24 @@ bool Customer::checkAccount(const string& username, const string& password) cons
 		return true;
 	else
 		return false;
-	//bunu yazdýk emme bunu mainde listten teker teker kontrol edip dönen boola göre gerekli customer nesnesini cagiracaz.
 }
 
-//bunlarý mainde bir ana islem bittikten sonra ekstradan impelement edecez
+
 void Customer::addBonus(double bonus)
 {
 	this->bonus += bonus;
 }
 
-void Customer::useBonus()
+void Customer::useBonus(double & totalPrice)
 {
-	
+	if (totalPrice - bonus <= 0)
+	{
+		bonus -= totalPrice;
+		totalPrice = 0;
+		return;
+	}
+
+	totalPrice -= bonus;
+	bonus = 0;
 }
 

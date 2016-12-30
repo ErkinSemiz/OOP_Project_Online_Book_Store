@@ -69,6 +69,6 @@ public:
 	void addBonus(double bonus);
 
 	//! Use bonus for shopping
-	void useBonus();
+	void useBonus(double & totalPrice);
 };
 
