@@ -2,7 +2,7 @@
 
 int Product::totalProduct = 0;
 
-Product::Product()
+Product::Product(string name, double price) : name(name), price(price)
 {
 	ID = ++totalProduct;
 }

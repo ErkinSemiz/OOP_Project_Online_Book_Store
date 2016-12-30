@@ -111,9 +111,11 @@ bool Customer::checkAccount(const string& username, const string& password) cons
 //bunlarý mainde bir ana islem bittikten sonra ekstradan impelement edecez
 void Customer::addBonus(double bonus)
 {
+	this->bonus += bonus;
 }
 
 void Customer::useBonus()
 {
+	
 }
 

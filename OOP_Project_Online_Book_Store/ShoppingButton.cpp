@@ -2,9 +2,9 @@
 #include <string>
 #include "Customer.h"
 #include "ShoppingCart.h"
-ShoppingButton::ShoppingButton()
+ShoppingButton::ShoppingButton(ShoppingCart* cart)
 {
-	shopping_cart = new ShoppingCart();
+	shopping_cart = cart;
 }
 ShoppingButton::~ShoppingButton()
 {
@@ -50,8 +50,8 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 		if ((*iterator)->getName() == _productname)
 		{
 			shopping_cart->addProduct(*iterator);
-			double current_bonus = shopping_cart->getCustomer()->getBonus();
-			shopping_cart->getCustomer()->setBonus(current_bonus + ((*iterator)->getPrice()) / 100);
+			/*double current_bonus = shopping_cart->getCustomer()->getBonus();
+			shopping_cart->getCustomer()->setBonus(current_bonus + ((*iterator)->getPrice()) / 100);*/
 			flag = 1;
 			cout << "Product added to your shopping cart." << endl;
 		}

@@ -19,7 +19,7 @@ private:
 	double price; /*!< Price of product */ 
 public:
 	//! Default constructor function
-	Product();
+	Product(string name, double price);
 	//! Default deconstructor function
 	~Product();
 	//! Return ID of product.

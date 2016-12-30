@@ -3,7 +3,7 @@
 /*!
 Properties of the Book object will be printed
 */
-Book::Book()
+Book::Book(string name, double price, string author, string publisher, int page):Product(name,price), author(author), publisher(publisher), page(page)
 {
 }
 Book::~Book()

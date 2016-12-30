@@ -6,6 +6,7 @@
 #include "CustomerButton.h"
 #include "ProductButton.h"
 #include "ShoppingButton.h"
+#include "ShoppingCart.h"
 
 list<Customer> customers;
 list<Product*> products;
@@ -13,7 +14,9 @@ list<Product*> products;
 int main() {
 	CustomerButton customerButton;
 	ProductButton productButton;
-	ShoppingButton shoppingButton;
+	
+	ShoppingCart shopping_cart;
+	ShoppingButton shoppingButton(&shopping_cart);
 
 	Customer *customer = new Customer("bilgehan", "buyukdere", "123456789", "bilg@esk.com", "bilgehan", "123");
 	customers.push_back(*customer);
@@ -22,6 +25,17 @@ int main() {
 	customer = new Customer("tahir", "kutahya", "123456789", "tah@esk.com", "tahir", "123");
 	customers.push_back(*customer);
 
+	Product* product = new Magazine("oyungezer", 12, 66, "game");
+	products.push_back(product);
+	product = new Book("Tutunamayanlar", 30, "Oguz Atay", "Iletisim", 724);
+	products.push_back(product);
+	product = new MusicCD("Best of MFO", 24, "MFO", "Pop, Rock");
+	products.push_back(product);
+	product = new Book("aa", 10, "Oguz Atay", "Iletisim", 724);
+	products.push_back(product);
+	product = new Magazine("bb", 5, 34, "TV");
+	products.push_back(product);
+	
 	bool loggedIn = false;
 	while (true) {
 		cout << "Menu\n----\n";
@@ -45,9 +59,9 @@ int main() {
 			}
 			else if (choice == 2) {
 				customerButton.Show(customers);
-				system("pause");
+				//system("pause");
 			}
-			system("cls");
+			//system("cls");
 		}
 		else if (choice == 2) {
 			cout << "Product Menu\n----------\n";
@@ -61,9 +75,9 @@ int main() {
 			}
 			else if (choice == 2) {
 				productButton.Show(products);
-				system("pause");
+				//system("pause");
 			}
-			system("cls");
+			//system("cls");
 		}
 
 		else if (choice == 3) {
@@ -81,6 +95,7 @@ int main() {
 			cout << "11. Quit" << endl;
 			cout << "Choose one: ";
 			cin >> choice;
+			system("cls");
 			if (choice == 1) {
 				if (shoppingButton.Login(customers) == true)
 				{
@@ -127,9 +142,12 @@ int main() {
 				shoppingButton.ListShoppingCart(products);
 			}
 			else if (choice == 6) {
-				shoppingButton.ShowBonus();
+				cout << shopping_cart.getCustomer()->getName() << "' s Bonus: " << shopping_cart.getCustomer()->getBonus() << endl;
+				
+				//shoppingButton.ShowBonus();
 			}
 			else if (choice == 7) {
+				shopping_cart.getCustomer()->useBonus();
 				//TO DO
 			}
 			else if (choice == 8) {
@@ -151,6 +169,7 @@ int main() {
 //{
 //	system("cls");
 //}
-		//system("cls");
+		system("pause");
+		system("cls");
 	}//main while
 }//main

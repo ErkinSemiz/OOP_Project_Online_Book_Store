@@ -7,7 +7,7 @@ using namespace std;
 class ShoppingButton {
 	ShoppingCart *shopping_cart;
 public:
-	ShoppingButton();
+	ShoppingButton(ShoppingCart* cart);
 	~ShoppingButton();
 	bool Login(list<Customer>& customers);
 	void AddProduct(list<Product*>& products);

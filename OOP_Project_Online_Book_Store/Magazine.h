@@ -15,6 +15,9 @@ class Magazine :public Product {
 	int Issue; /*! Issue of the magazine*/
 	string type; /*! Type of the magazine*/
 public:
+	//! Constructor function
+	Magazine(string name, double price, int issue, string type);
+
 	//! Prints the information of the magazine to screen.
 	void printProperties()const;
 	//! Gets Issue of the magazine.

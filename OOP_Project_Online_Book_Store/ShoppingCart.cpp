@@ -52,7 +52,7 @@ void ShoppingCart::addProduct(Product* product)
 	int productCount;
 	cin >> productCount;
 	a->setQuantity(productCount);
-	productsToPurchase.push_front(a);
+	productsToPurchase.push_back(a);
 }
 /*!
 \param product Removes a product from the Shopping cart.
@@ -103,12 +103,11 @@ void ShoppingCart::placeOrder()
 	for (int i = 0; i < productsToPurchase.size(); i++)
 	{
 		totalPrice += (*iterator)->getQuantity() * (*iterator)->getProduct()->getPrice();
+		getCustomer()->addBonus((*iterator)->getProduct()->getPrice() * (*iterator)->getQuantity() / 100);
 		iterator = next(productsToPurchase.begin(), i);
 	}
 
-
-
-	cout << "What is your payment method ?"
+	cout << "What is your payment method ?\n"
 		<< "1.)Credit Card" << endl
 		<< "2.)Cash" << endl
 		<< "3.)Check" << endl;
@@ -159,7 +158,8 @@ void ShoppingCart::placeOrder()
 	{
 		delete(*iterator);
 	}
-	delete(*iterator);
+	//delete(*productsToPurchase.end());
+	//delete(*iterator);
 	productsToPurchase.clear();
 
 }
@@ -174,7 +174,7 @@ void ShoppingCart::cancelOrder()
 	{
 		delete(*iterator);
 	}
-	delete(*iterator);
+	//delete(*iterator);
 	productsToPurchase.clear();
 }
 /*!
@@ -203,7 +203,7 @@ void ShoppingCart::showInvoice()
 	}
 	else
 	{
-		cout << "The payment method is: " << typeid(this->getPaymentMethod()).name() << endl;
+		//cout << "The payment method is: " << typeid(this->getPaymentMethod()).name() << endl;
 		cout << "The products are: " << endl;
 		auto iterator = productsToPurchase.begin();
 		for (int i = 0; i < productsToPurchase.size(); i++)
@@ -211,10 +211,10 @@ void ShoppingCart::showInvoice()
 			cout << "Product name: " << (*iterator)->getProduct()->getName() << endl;
 			cout << "Product ID: " << (*iterator)->getProduct()->getID() << endl;
 			cout << "The product's price: " << (*iterator)->getProduct()->getPrice() << endl;
-			iterator = next(productsToPurchase.begin(), i);
+			iterator = next(productsToPurchase.begin(), i+1);
 		}
 		cout << endl;
-		this->getPaymentMethod()->performPayment();
+		//this->getPaymentMethod()->performPayment();
 	}
 }
 /*!

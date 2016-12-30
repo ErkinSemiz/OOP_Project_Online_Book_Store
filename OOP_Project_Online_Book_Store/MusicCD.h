@@ -15,6 +15,9 @@ class MusicCD :public Product {
 	string singer; /*! Name of the singer of the MusicCd */
 	string type; /*! Type of the MusicCd */
 public:
+	//! Default constructor function
+	MusicCD(string name, double price, string singer, string type);
+
 	//! Prints the information of the MusicCd to the screen.
 	void printProperties()const;
 	//! Gets the name of the singer.

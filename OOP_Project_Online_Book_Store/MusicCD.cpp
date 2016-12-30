@@ -1,4 +1,7 @@
 #include "MusicCD.h"
+MusicCD::MusicCD(string name, double price, string singer, string type) :Product(name, price), singer(singer), type(type)
+{
+}
 /*!
 Properties of the MusicCD object will be printed
 */

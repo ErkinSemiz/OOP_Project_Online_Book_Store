@@ -17,7 +17,7 @@ private:
 	int page; /*!< Page count of book */ 
 public:
 	//! Default constructor function
-	Book();
+	Book(string name, double price, string author, string publisher, int page);
 	//! Default deconstructor function
 	~Book();
 	//! Print informations of book to screen.

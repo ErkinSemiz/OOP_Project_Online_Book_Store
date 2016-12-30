@@ -1,4 +1,7 @@
 #include "Magazine.h"
+Magazine::Magazine(string name, double price, int issue, string type):Product(name, price), Issue(issue), type(type)
+{
+}
 /*!
 Properties of the Magazine object will be printed
 */

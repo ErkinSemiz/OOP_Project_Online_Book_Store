@@ -13,8 +13,8 @@ Check::~Check()
 /*! Performs the payment with check. */
 void Check::performPayment()
 {
-	cout << getAmount() << " is paid with check." << endl;
 
+	cout << getAmount() << " is paid with check." << endl;
 	cout << "The Check's name is: " <<getName();
 	cout << "The Check's Bank Id is: " <<getBankID();
 }
