@@ -3,6 +3,7 @@
 #include "ShoppingCart.h"
 #include "CustomerButton.h"
 #include "ProductButton.h"
+
 /**
 * @file ShoppingButton.h
 * @Authors Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com),Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
@@ -26,7 +27,7 @@ public:
 	//! Function for removing a product from the customer's shopping cart.
 	void RemoveProduct(list<Product*>& products);
 	//! Function for listing the customer's shopping cart.
-	void ListShoppingCart(list<Product*>& products);
+	bool ListShoppingCart(list<Product*>& products);
 	//! Function for showing the bonus that the customer has.
 	void ShowBonus();
 	//! Function for a customer to use bonus.

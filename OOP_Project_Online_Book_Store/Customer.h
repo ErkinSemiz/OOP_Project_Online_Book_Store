@@ -66,7 +66,7 @@ public:
 	bool checkAccount(const string& username, const string& password) const;
 
 	//! Incread bonus amount of customer
-	void addBonus(double bonus);
+	void addBonus(const double bonus);
 
 	//! Use bonus for shopping
 	void useBonus(double & totalPrice);

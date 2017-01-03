@@ -8,8 +8,9 @@ Properties of the MusicCD object will be printed
 void MusicCD::printProperties() const
 {
 	Product::printProperties();
-	cout << "The Singer is: " << singer << endl;
-	cout << "The Type is: " << type << endl;
+	cout << "|  " << setw(15) << singer << "|      -      |    -   |    -    |  " <<setw(12) <<type << "|"<< endl;
+	//cout << "The Singer is: " << singer << endl;
+	//cout << "The Type is: " << type << endl;
 }
 /*! \return The singer of the MusicCD */
 string MusicCD::getSinger() const

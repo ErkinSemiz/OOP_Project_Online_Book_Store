@@ -99,7 +99,10 @@ void Customer::setPassword(const string& password)
 {
 	this->password = password;
 }
-
+/*! 
+\param username The username that is entered by the user to try login.
+\param password The password that is entered by the user to try login.
+*/
 bool Customer::checkAccount(const string& username, const string& password) const
 {
 	if (this->username == username&&this->password == password)
@@ -107,13 +110,17 @@ bool Customer::checkAccount(const string& username, const string& password) cons
 	else
 		return false;
 }
+/*!
+\param bonus The amount that will be added to current bonus of customer
+*/
 
-
-void Customer::addBonus(double bonus)
+void Customer::addBonus(const double bonus)
 {
 	this->bonus += bonus;
 }
-
+/*!
+\param totalPrice Cost of whole shopping. 
+*/
 void Customer::useBonus(double & totalPrice)
 {
 	if (totalPrice - bonus <= 0)

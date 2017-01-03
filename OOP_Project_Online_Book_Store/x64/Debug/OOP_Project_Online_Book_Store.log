@@ -1,25 +1,14 @@
-﻿Build started 3.01.2017 14:44:35.
+﻿Build started 3.01.2017 20:58:11.
      1>Project "C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store\OOP_Project_Online_Book_Store.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Book.cpp Cash.cpp Check.cpp CreditCard.cpp Customer.cpp CustomerButton.cpp Magazine.cpp MainProgramme.cpp MusicCD.cpp Payment.cpp Product.cpp ProductButton.cpp ProductToPurchase.cpp ShoppingButton.cpp ShoppingCart.cpp
-         ShoppingCart.cpp
-         ShoppingButton.cpp
-         ProductToPurchase.cpp
-         ProductButton.cpp
-     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\productbutton.cpp(22): warning C4101: '_prdID': unreferenced local variable
-         Product.cpp
-         Payment.cpp
-         MusicCD.cpp
-         MainProgramme.cpp
-         Magazine.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Customer.cpp CustomerButton.cpp MainProgramme.cpp ShoppingButton.cpp ShoppingCart.cpp
          CustomerButton.cpp
          Customer.cpp
-         CreditCard.cpp
-         Check.cpp
-         Cash.cpp
-         Book.cpp
          Generating Code...
-     1>c:\users\tahir\documents\github\oop_project_online_book_store\oop_project_online_book_store\shoppingbutton.cpp(48): warning C4715: 'ShoppingButton::Login': not all control paths return a value
+         Skipping... (no relevant changes detected)
+         ShoppingCart.cpp
+         ShoppingButton.cpp
+         MainProgramme.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Tahir\Documents\GitHub\OOP_Project_Online_Book_Store\x64\Debug\OOP_Project_Online_Book_Store.lib" /MACHINE:X64 x64\Debug\Book.obj
          x64\Debug\Cash.obj
@@ -41,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:09.54
+Time Elapsed 00:00:03.63

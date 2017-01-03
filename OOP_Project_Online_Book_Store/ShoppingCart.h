@@ -36,7 +36,7 @@ public:
 	//! Set customer
 	void setCustomer(Customer* const customer);
 
-	//! Use bonu for shopping
+	//! Use bonus for shopping
 	void setBonusUsed(const bool is_bonus_used);
 
 	//! Add product to shopping char
@@ -52,7 +52,7 @@ public:
 	void cancelOrder();
 	
 	//! Print products in shopping cart to screen
-	void printProducts() const;
+	bool printProducts() const;
 
 	//! Print invoice to screen
 	void showInvoice();

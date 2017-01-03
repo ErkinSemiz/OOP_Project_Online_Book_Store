@@ -106,13 +106,14 @@ The function for showing the products in the system.
 */
 void ProductButton::Show(list<Product*>& products) const
 {
-	cout << "Products\n-------------\n";
+	cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+	cout << "|  ID  |       Name       |   Price   |  Author/Singer  |  Publisher  |  Page  |  Issue  |     Type     |" << endl;
+	cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
 	auto iterator = products.begin();
 	for (int i = 0; i < products.size(); i++)
 	{
-		cout << (i + 1) << ". Product:\n";
 		(*iterator)->printProperties();
 		iterator = next(products.begin(), (i + 1));
 	}
-	
+	cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
 }

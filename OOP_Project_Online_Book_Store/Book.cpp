@@ -18,9 +18,10 @@ Properties of the Book object will be printed
 void Book::printProperties() const
 {
 	Product::printProperties();
-	cout << "The Book's Author is: " << author << endl;
-	cout << "The Book's Publisher is: " << publisher << endl;
-	cout << "The Book's Page is: " << page << endl;
+	cout << "|  "<<setw(15) << author << "|  "<< setw(11) <<publisher << "|  "<<setw(6) << page <<"|    -    |       -      | " << endl;
+	//cout << "The Book's Author is: " << author << endl;
+	//cout << "The Book's Publisher is: " << publisher << endl;
+	//cout << "The Book's Page is: " << page << endl;
 }
 /*! \return The author of the book */
 string Book::getAuthor() const

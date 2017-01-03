@@ -1,7 +1,8 @@
 #include "ShoppingButton.h"
 #include <string>
-#include "Customer.h"
-#include "ShoppingCart.h"
+//#include "Customer.h"
+//#include "ShoppingCart.h"
+
 /*!
 	Constructor function for ShoppingButton class.
 */
@@ -49,7 +50,7 @@ bool ShoppingButton::Login(list<Customer>& customers)
 /*!
 	Function for adding a product to the customer's shopping cart.
 */
-void ShoppingButton::AddProduct(list<Product*>& products)
+void ShoppingButton::AddProduct(list<Product*>& products )
 {
 
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -58,6 +59,7 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 	cout << "Enter the name of the product that you wish to add: ";
 	getline(cin, _productname);
 	auto iterator = products.begin();
+
 	for (int i = 0; i < products.size(); i++)
 	{
 		if ((*iterator)->getName() == _productname)
@@ -79,7 +81,6 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 */
 void ShoppingButton::RemoveProduct(list<Product*>& products)
 {	
-
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	int flag = 0;
 	string _productname;
@@ -104,16 +105,16 @@ void ShoppingButton::RemoveProduct(list<Product*>& products)
 /*!
 	Function for listing the customer's shopping cart.
 */
-void ShoppingButton::ListShoppingCart(list<Product*>& products)
+bool ShoppingButton::ListShoppingCart(list<Product*>& products)
 {
-	shopping_cart->printProducts();
+	return shopping_cart->printProducts();
 }
 /*!
 	 Function for showing the bonus that the customer has.
 */
 void ShoppingButton::ShowBonus()
 {
-	this->shopping_cart->getCustomer()->getBonus();
+	cout << this->shopping_cart->getCustomer()->getName() << "' s Bonus: " << this->shopping_cart->getCustomer()->getBonus() << endl;
 }
 /*!
 //! Function for a customer to use bonus.
@@ -143,4 +144,3 @@ void ShoppingButton::ShowInvoice()
 {
 	this->shopping_cart->showInvoice();
 }
-

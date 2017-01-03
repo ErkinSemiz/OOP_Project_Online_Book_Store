@@ -118,6 +118,10 @@ void ShoppingCart::addProduct(Product* product)
 	*/
 	void ShoppingCart::placeOrder()
 	{
+		if (productsToPurchase.empty()) {
+			cout << "Purchase List Is Empty.Please Add Product First" << endl;
+			return;
+		}
 		double totalPrice = 0;
 		auto iterator = productsToPurchase.begin();
 		for (int i = 0; i < productsToPurchase.size(); i++)
@@ -213,16 +217,26 @@ void ShoppingCart::addProduct(Product* product)
 	/*!
 	Prints the products of the shopping cart.
 	*/
-	void ShoppingCart::printProducts() const
+	bool ShoppingCart::printProducts() const
 	{
+		if (productsToPurchase.empty()) {
+			cout << "Purchase List Is Empty.Please Add Product First" << endl;
+			return false;
+		}
+		cout << "+----------------------------------------------------------+" << endl;
+		cout << "|       Name       |    Quantity    |  Price Per Quantity  |" << endl;
+		cout << "+----------------------------------------------------------+" << endl;
 		auto iterator = productsToPurchase.begin();
 		for (int i = 0; i < productsToPurchase.size(); i++)
 		{
-			cout << "The name of the product: " << (*iterator)->getProduct()->getName() << endl;
-			cout << "The quantity of the product: " << (*iterator)->getQuantity() << endl;
-			cout << "The price of the product (per quantity): " << (*iterator)->getProduct()->getPrice() << endl;
+			cout << "|  " << left <<setw(16) << (*iterator)->getProduct()->getName() << "|  " << setw(14) << (*iterator)->getQuantity() << "|  " << setw(20)<< (*iterator)->getProduct()->getPrice() << "|"<<endl;
+			//cout << "The name of the product: " << (*iterator)->getProduct()->getName() << endl;
+			//cout << "The quantity of the product: " << (*iterator)->getQuantity() << endl;
+			//cout << "The price of the product (per quantity): " << (*iterator)->getProduct()->getPrice() << endl;
 			iterator = next(productsToPurchase.begin(), i + 1);
 		}
+		cout << "+----------------------------------------------------------+" << endl;
+		return true;
 	}
 	/*!
 	Shows the invoice to the customer.
@@ -237,15 +251,29 @@ void ShoppingCart::addProduct(Product* product)
 		else
 		{
 			//cout << "The payment method is: " << typeid(this->getPaymentMethod()).name() << endl;
-			cout << "The products are: " << endl;
+			//cout << "The products are: " << endl;
+			double total= 0;
+			cout << "+----------------------------------------------------------+" << endl;
+			cout << "|       Name       |    Quantity    |  Price Per Quantity  |" << endl;
+			cout << "+----------------------------------------------------------+" << endl;
 			auto iterator = productsToPurchase.begin();
 			for (int i = 0; i < productsToPurchase.size(); i++)
 			{
-				cout << "Product name: " << (*iterator)->getProduct()->getName() << endl;
-				cout << "Product ID: " << (*iterator)->getProduct()->getID() << endl;
-				cout << "The product's price: " << (*iterator)->getProduct()->getPrice() << endl;
+				cout << "|  " << left << setw(16) << (*iterator)->getProduct()->getName() << "|  " << setw(14) << (*iterator)->getQuantity() << "|  " << setw(20) << (*iterator)->getProduct()->getPrice() << "|" << endl;
+				total += (*iterator)->getQuantity() * (*iterator)->getProduct()->getPrice();
+				//cout << "Product name: " << (*iterator)->getProduct()->getName() << endl;
+				//cout << "Product ID: " << (*iterator)->getProduct()->getID() << endl;
+				//cout << "The product's price: " << (*iterator)->getProduct()->getPrice() << endl;
 				iterator = next(productsToPurchase.begin(), i + 1);
 			}
+			cout << "+----------------------------------------------------------+" << endl;
+			cout << "|  Customer Name :  " << left <<setw(39) <<customer->getName()   <<"|" << endl;
+			cout << "|  Customer Email:  " << setw(39) << customer->getEmail() << "|" << endl;
+			cout << "|  Customer Phone:  " << setw(39) << customer->getPhone() << "|" << endl;
+			cout << "+----------------------------------------------------------+" << endl;
+			cout << "|  Total Price   :  " << setw(39) << total << "|" << endl;
+			cout << "+----------------------------------------------------------+" << endl;
+
 			cout << endl;
 			//this->getPaymentMethod()->performPayment();
 		}

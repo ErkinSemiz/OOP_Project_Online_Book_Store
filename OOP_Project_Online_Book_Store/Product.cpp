@@ -52,9 +52,10 @@ Properties of the Product object will be printed
 */
 void Product::printProperties()const
 {
-	cout << "The Product's ID is: " << ID << endl;
-	cout << "The Product's Name is: " << name << endl;
-	cout << "The Product's Price is: " << price << endl;
+	cout <<"|   " << ID  << "  | "<<setw(17) << left << name << "|   "<< setw(8) << price;
+	//cout << "The Product's ID is: " << ID << endl;
+	//cout << "The Product's Name is: " << name << endl;
+	//cout << "The Product's Price is: " << price << endl;
 }
 
 string Product::getproduct() const
