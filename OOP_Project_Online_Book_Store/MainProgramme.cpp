@@ -163,11 +163,10 @@ int main() {
 				system("pause");
 			}
 		}//Shopping Menu
-//cout << "Press any key to return the menu...";
-//if (getchar())
-//{
-//	system("cls");
-//}
+		else if (choice == 4)
+		{
+			break;			
+		}
 		system("pause");
 		system("cls");
 	}//main while

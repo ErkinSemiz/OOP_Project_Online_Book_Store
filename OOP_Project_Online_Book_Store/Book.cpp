@@ -1,14 +1,20 @@
 #include "Book.h"
-
 /*!
-Properties of the Book object will be printed
+Constructor function for the Book class.
 */
 Book::Book(string name, double price, string author, string publisher, int page):Product(name,price), author(author), publisher(publisher), page(page)
 {
 }
+/*!
+Destructor function for the Book class.
+*/
 Book::~Book()
 {
 }
+
+/*!
+Properties of the Book object will be printed
+*/
 void Book::printProperties() const
 {
 	Product::printProperties();
@@ -40,7 +46,7 @@ void Book::setPublisher(const string& publisher)
 {
 	this->publisher = publisher;
 }
-/*! \return The page of the book */
+/*! \return The page number of the book */
 int Book::getPage() const
 {
 	return page;
@@ -52,7 +58,7 @@ void Book::setPage(int page)
 {
 	this->page = page;
 }
-
+/*! \return The name of class. */
 string Book::getproduct() const
 {
 	return "Book";

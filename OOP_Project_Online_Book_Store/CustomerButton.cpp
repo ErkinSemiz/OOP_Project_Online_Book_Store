@@ -1,16 +1,21 @@
 #include "CustomerButton.h"
 #include <string>
 
-
+/*!
+Constructor function for the CustomerButton class.
+*/
 CustomerButton::CustomerButton()
 {
 }
-
-
+/*!
+Destructor function for the CustomerButton class.
+*/
 CustomerButton::~CustomerButton()
 {
 }
-
+/*!
+The function for adding a customer to the system.
+*/
 void CustomerButton::Add(list<Customer>& customers)
 {
 	string _name;
@@ -43,7 +48,9 @@ void CustomerButton::Add(list<Customer>& customers)
 	Customer* customer = new Customer(_name, _adress,_phone,_email,_username,_password);
 	customers.push_back(*customer);
 }
-
+/*!
+The function for showing the customers in the system.
+*/
 void CustomerButton::Show(list<Customer>& customers) const
 {
 	cout << "Customers\n-------------\n";

@@ -2,13 +2,22 @@
 #include <string>
 #include "Customer.h"
 #include "ShoppingCart.h"
+/*!
+	Constructor function for ShoppingButton class.
+*/
 ShoppingButton::ShoppingButton(ShoppingCart* cart)
 {
 	shopping_cart = cart;
 }
+/*!
+	Destructor function for ShoppingButton class.
+*/
 ShoppingButton::~ShoppingButton()
 {
 }
+/*!
+Function for a customer to log in to the system.
+*/
 bool ShoppingButton::Login(list<Customer>& customers)
 {
 	string _username, _password;
@@ -37,7 +46,9 @@ bool ShoppingButton::Login(list<Customer>& customers)
 	}
 
 }
-
+/*!
+	Function for adding a product to the customer's shopping cart.
+*/
 void ShoppingButton::AddProduct(list<Product*>& products)
 {
 
@@ -54,8 +65,7 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 			shopping_cart->addProduct(*iterator);
 			/*double current_bonus = shopping_cart->getCustomer()->getBonus();
 			shopping_cart->getCustomer()->setBonus(current_bonus + ((*iterator)->getPrice()) / 100);*/
-			flag = 1;
-			cout << "Product added to your shopping cart." << endl;
+			flag = 1;		
 		}
 		iterator = next(products.begin(), (i + 1));
 	}
@@ -64,7 +74,9 @@ void ShoppingButton::AddProduct(list<Product*>& products)
 		cout << "Product not found." << endl;
 	}
 }
-
+/*!
+	Function for removing a product from the customer's shopping cart.
+*/
 void ShoppingButton::RemoveProduct(list<Product*>& products)
 {	
 
@@ -81,7 +93,6 @@ void ShoppingButton::RemoveProduct(list<Product*>& products)
 		{
 			shopping_cart->removeProduct(*iterator);
 			flag = 1;
-			cout << "Product removed from your shopping cart." << endl;
 		}
 		iterator = next(products.begin(), i + 1);
 	}
@@ -90,32 +101,44 @@ void ShoppingButton::RemoveProduct(list<Product*>& products)
 		cout << "Product not found." << endl;
 	}
 }
-
+/*!
+	Function for listing the customer's shopping cart.
+*/
 void ShoppingButton::ListShoppingCart(list<Product*>& products)
 {
 	shopping_cart->printProducts();
 }
-
+/*!
+	 Function for showing the bonus that the customer has.
+*/
 void ShoppingButton::ShowBonus()
 {
 	this->shopping_cart->getCustomer()->getBonus();
 }
-
+/*!
+//! Function for a customer to use bonus.
+*/
 void ShoppingButton::UseBonus()
 {
 	shopping_cart->setBonusUsed(true);
 }
-
+/*!
+Function for a customer to place order.
+*/
 void ShoppingButton::PlaceOrder()
 {
 	this->shopping_cart->placeOrder();
 }
-
+/*!
+	Function for a customer to cancel order.
+*/
 void ShoppingButton::CancelOrder()
 {
 	this->shopping_cart->cancelOrder();
 }
-
+/*!
+	 Function to show a customer his/her invoice.
+*/
 void ShoppingButton::ShowInvoice()
 {
 	this->shopping_cart->showInvoice();

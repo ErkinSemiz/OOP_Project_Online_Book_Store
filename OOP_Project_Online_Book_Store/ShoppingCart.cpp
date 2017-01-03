@@ -11,7 +11,6 @@ ShoppingCart::ShoppingCart()
 {
 	//customer = new Customer();
 }
-
 /*! Shopping Cart destructor. */
 ShoppingCart::~ShoppingCart()
 {
@@ -53,6 +52,11 @@ void ShoppingCart::addProduct(Product* product)
 			cout << "How many " << product->getName() << " do you want to add : ";
 			int productCount;
 			cin >> productCount;
+			if (productCount <= 0)
+			{
+				cout << "Invalid Entry!" << endl;
+				break;
+			}
 			productCount += (*iterator)->getQuantity();
 			(*iterator)->setQuantity(productCount);
 			return;
@@ -64,8 +68,16 @@ void ShoppingCart::addProduct(Product* product)
 		cout << "How many " << product->getName() << " do you want to add : ";
 		int productCount;
 		cin >> productCount;
-		a->setQuantity(productCount);
-		productsToPurchase.push_back(a);
+		if (productCount <= 0)
+		{
+			cout << "Invalid Entry!" << endl;
+		}
+		else
+		{
+			a->setQuantity(productCount);
+			productsToPurchase.push_back(a);
+			cout << "Product added to your shopping cart." << endl;
+		}
 	}
 	/*!
 	\param product Removes a product from the Shopping cart.
@@ -80,14 +92,21 @@ void ShoppingCart::addProduct(Product* product)
 				cout << "How many " << product->getName() << " item do you want to delete ?" << endl;
 				int delquan;
 				cin >> delquan;
-				if (delquan < (*iterator)->getQuantity())
+				if (delquan <= 0)
+				{
+					cout << "Invalid Entry" << endl;
+					break;
+				}
+				else if (delquan < (*iterator)->getQuantity())
 				{
 					(*iterator)->setQuantity((*iterator)->getQuantity() - delquan);
+					cout << "Product removed from your shopping cart." << endl;
 					return;
 				}
 				else
 				{
 					productsToPurchase.erase(iterator);
+					cout << "Product removed from your shopping cart." << endl;
 					return;
 				}
 			}
@@ -109,11 +128,9 @@ void ShoppingCart::addProduct(Product* product)
 		}
 		if(isBonusUsed)
 		{
-
 			cout << customer->getBonus() << " bonus Used" << endl;
 			customer->useBonus(totalPrice);
 			cout << "After using the bonus new cost is " << totalPrice << endl;
-
 		}
 		cout << "What is your payment method ?\n"
 			<< "1.)Credit Card" << endl

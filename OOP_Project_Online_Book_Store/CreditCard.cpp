@@ -1,12 +1,16 @@
 #include "CreditCard.h"
 
 
-
+/*!
+	Constructor function for the CreditCard class.
+*/
 CreditCard::CreditCard()
 {
 }
 
-
+/*!
+	Destructor function for the CreditCard class.
+*/
 CreditCard::~CreditCard()
 {
 }
