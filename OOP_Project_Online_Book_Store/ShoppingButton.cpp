@@ -30,22 +30,13 @@ bool ShoppingButton::Login(list<Customer>& customers)
 	getline(cin, _username);
 	cout << "Please Enter Your Password: ";
 	getline(cin, _password);
-	for (int i = 0; i < customers.size(); i++)
-	{		
-		if (_username == (*iterator).getUsername() && _password == (*iterator).getPassword())
-		{
-			shopping_cart->setCustomer(&*iterator);
-			return true;			
-			flag = 1;
-			break;
-		}
-		iterator = next(customers.begin(), (i + 1));
+	auto it = std::find_if(customers.begin(), customers.end(), [&](const Customer c) { return c.checkAccount(_username,_password); });
+	if (it != customers.end()) {
+		shopping_cart->setCustomer(&*it);
+		return true;
 	}
-	if (flag == 0)
-	{
-		return false;
-	}
-
+		
+	return false;
 }
 /*!
 	Function for adding a product to the customer's shopping cart.
@@ -54,25 +45,15 @@ void ShoppingButton::AddProduct(list<Product*>& products )
 {
 
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	int flag = 0;
-	string _productname;
-	cout << "Enter the name of the product that you wish to add: ";
-	getline(cin, _productname);
-	auto iterator = products.begin();
+	int ID;
+	cout << "Enter the ID of the product that you wish to add: ";
+	cin >> ID;
+	auto iterator = std::find_if(products.begin(), products.end(), [&](const Product* pr) { return pr->getID() == ID; });
 
-	for (int i = 0; i < products.size(); i++)
-	{
-		if ((*iterator)->getName() == _productname)
-		{
-			shopping_cart->addProduct(*iterator);
-			/*double current_bonus = shopping_cart->getCustomer()->getBonus();
-			shopping_cart->getCustomer()->setBonus(current_bonus + ((*iterator)->getPrice()) / 100);*/
-			flag = 1;		
-		}
-		iterator = next(products.begin(), (i + 1));
+	if (iterator != products.end()) {
+		shopping_cart->addProduct(*iterator);
 	}
-	if (flag == 0)
-	{
+	else {
 		cout << "Product not found." << endl;
 	}
 }
@@ -82,23 +63,15 @@ void ShoppingButton::AddProduct(list<Product*>& products )
 void ShoppingButton::RemoveProduct(list<Product*>& products)
 {	
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	int flag = 0;
-	string _productname;
-	cout << "Enter the name of the product that you wish to remove: ";
-	
-	getline(cin, _productname);
-	auto iterator = products.begin();
-	for (int i = 0; i < products.size(); i++)
-	{
-		if ((*iterator)->getName() == _productname)
-		{
-			shopping_cart->removeProduct(*iterator);
-			flag = 1;
-		}
-		iterator = next(products.begin(), i + 1);
+	int ID;
+	cout << "Enter the ID of the product that you wish to remove: ";
+	cin >> ID;
+	auto iterator = std::find_if(products.begin(), products.end(), [&](const Product* pr) { return pr->getID() == ID; });
+
+	if (iterator != products.end()) {
+		shopping_cart->removeProduct(*iterator);
 	}
-	if (flag == 0)
-	{
+	else {
 		cout << "Product not found." << endl;
 	}
 }

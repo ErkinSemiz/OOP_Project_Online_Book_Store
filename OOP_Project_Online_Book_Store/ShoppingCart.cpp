@@ -5,7 +5,7 @@
 #include "CreditCard.h"
 #include "Cash.h"
 #include "Check.h"
-
+#include <time.h>
 /*! Shopping Cart constructor. */
 ShoppingCart::ShoppingCart()
 {
@@ -17,6 +17,7 @@ ShoppingCart::~ShoppingCart()
 	while (!productsToPurchase.empty()) {
 		productsToPurchase.pop_front();
 	}
+	delete paymentMethod;
 }
 /*!
 \param payment_method "paymentMethod" variable of the Shopping Cart will be set.
@@ -127,7 +128,6 @@ void ShoppingCart::addProduct(Product* product)
 		for (int i = 0; i < productsToPurchase.size(); i++)
 		{
 			totalPrice += (*iterator)->getQuantity() * (*iterator)->getProduct()->getPrice();
-			//getCustomer()->addBonus((*iterator)->getProduct()->getPrice() * (*iterator)->getQuantity() / 100);
 			iterator = next(productsToPurchase.begin(), i + 1);
 		}
 		if(isBonusUsed)
@@ -135,6 +135,10 @@ void ShoppingCart::addProduct(Product* product)
 			cout << customer->getBonus() << " bonus Used" << endl;
 			customer->useBonus(totalPrice);
 			cout << "After using the bonus new cost is " << totalPrice << endl;
+			if (totalPrice == 0) {
+				cout << "You don't have to pay for this purchase." << endl;
+				return;
+			}
 		}
 		cout << "What is your payment method ?\n"
 			<< "1.)Credit Card" << endl
@@ -154,17 +158,59 @@ void ShoppingCart::addProduct(Product* product)
 		string _bankID;
 
 		if (checkPayment == 1) {
+			int failFlag = 0;
 			CreditCard* Card = new CreditCard();
 			cout << "Please Enter Card Number : ";
 			long cn;
 			cin >> cn;
 			Card->setNumber(cn);
-			cout << "Please Enter Type Of The Card: ";
+
 			cin.ignore();
-			getline(cin, type);
+			while (true) {
+				cout << "Please Enter Type Of The Card: ";
+				getline(cin, type);
+				if (!type.empty())
+					break;
+				cout << "Enter the type of the card." << endl;
+			}
+
 			Card->setType(type);
-			cout << "Please Enter The Expire Date: ";
-			getline(cin, ed);
+			while (true) {
+				cout << "Please Enter The Expire Date(MM/YY): ";
+				getline(cin, ed);
+				if (ed.empty() || ed.length() != 5) {
+					cout << "Enter a vild ExpDate." << endl;
+				}
+				else {
+					struct tm newtime;
+					__time64_t long_time;
+					
+					// Get time as 64-bit integer.  
+					_time64(&long_time);
+					// Convert to local time.  
+					_localtime64_s(&newtime, &long_time);
+					int year = newtime.tm_year + 1900;
+					int month = newtime.tm_mon + 1;
+					string expYear = ed.substr(ed.length() - 2);
+					string expMonth = ed.substr(0, ed.length() - 2);
+					if (stoi(expYear) < year - 2000 || stoi(expYear) == year - 2000 && stoi(expMonth) < month) {
+						cout << "Your card is expired!" << endl;
+						cout << "1. Try a new payment method" << endl;
+						cout << "2. Cancel Order" << endl;
+						cout << "Choose one: ";
+						int subChoice;
+						cin >> subChoice;
+						if (subChoice == 1) {
+							system("cls");
+							placeOrder();
+						}
+						else if (subChoice == 2) 
+							cancelOrder();
+						return;
+					}
+					break;
+				}
+			}
 			Card->setExpDate(ed);
 			Card->setAmount(totalPrice);
 			Card->setExpDate(ed);
@@ -177,11 +223,17 @@ void ShoppingCart::addProduct(Product* product)
 		}
 		else if (checkPayment == 3) {
 			Check* _Check = new Check();
-			cout << "Please Enter Name : ";
 			cin.ignore();
-			getline(cin, _name);
-			//cin >> _name;
+			while (true) {
+				cout << "Please Enter Name : ";
+				getline(cin, _name);
+				if (!_name.empty())
+					break;
+				cout << "Enter a name." << endl;
+			}
+
 			_Check->setName(_name);
+
 			cout << "Please Enter The Bank ID : ";
 			cin >> _bankID;
 			_Check->setBankID(_bankID);
@@ -223,19 +275,19 @@ void ShoppingCart::addProduct(Product* product)
 			cout << "Purchase List Is Empty.Please Add Product First" << endl;
 			return false;
 		}
-		cout << "+----------------------------------------------------------+" << endl;
-		cout << "|       Name       |    Quantity    |  Price Per Quantity  |" << endl;
-		cout << "+----------------------------------------------------------+" << endl;
+		cout << "+-----------------------------------------------------------------+" << endl;
+		cout << "|  ID  |       Name       |    Quantity    |  Price Per Quantity  |" << endl;
+		cout << "+-----------------------------------------------------------------+" << endl;
 		auto iterator = productsToPurchase.begin();
 		for (int i = 0; i < productsToPurchase.size(); i++)
 		{
-			cout << "|  " << left <<setw(16) << (*iterator)->getProduct()->getName() << "|  " << setw(14) << (*iterator)->getQuantity() << "|  " << setw(20)<< (*iterator)->getProduct()->getPrice() << "|"<<endl;
+			cout << "|  " <<  setw(4) << (*iterator)->getProduct()->getID() << "|  "<< left << setw(16) << (*iterator)->getProduct()->getName() << "|  " << setw(14) << (*iterator)->getQuantity() << "|  " << setw(20)<< (*iterator)->getProduct()->getPrice() << "|"<<endl;
 			//cout << "The name of the product: " << (*iterator)->getProduct()->getName() << endl;
 			//cout << "The quantity of the product: " << (*iterator)->getQuantity() << endl;
 			//cout << "The price of the product (per quantity): " << (*iterator)->getProduct()->getPrice() << endl;
 			iterator = next(productsToPurchase.begin(), i + 1);
 		}
-		cout << "+----------------------------------------------------------+" << endl;
+		cout << "+-----------------------------------------------------------------+" << endl;
 		return true;
 	}
 	/*!

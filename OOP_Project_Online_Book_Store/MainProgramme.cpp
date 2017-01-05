@@ -19,22 +19,22 @@ int main() {
 	ShoppingCart shopping_cart;
 	ShoppingButton shoppingButton(&shopping_cart);
 
-	Customer *customer = new Customer("bilgehan", "buyukdere", "123456789", "bilg@esk.com", "bilgehan", "123");
+	Customer *customer = new Customer("bilgehan", "buyukdere", "5301234567", "bilg@esk.com", "bilgehan", "123");
 	customers.push_back(*customer);
-	customer = new Customer("erkin", "hastane", "123456789", "erk@esk.com", "a", "a");
+	customer = new Customer("erkin", "hastane", "5311234567", "erk@esk.com", "a", "a");
 	customers.push_back(*customer);
-	customer = new Customer("tahir", "kutahya", "123456789", "tah@esk.com", "tahir", "123");
+	customer = new Customer("tahir", "kutahya", "5321234567", "tah@esk.com", "tahir", "123");
 	customers.push_back(*customer);
 
-	Product* product = new Magazine("oyungezer", 12, 66, "game");
+	Product* product = new Magazine("Oyungezer", 12, 66, "Game");
 	products.push_back(product);
 	product = new Book("Tutunamayanlar", 30, "Oguz Atay", "Iletisim", 724);
 	products.push_back(product);
 	product = new MusicCD("Best of MFO", 24, "MFO", "Pop, Rock");
 	products.push_back(product);
-	product = new Book("aa", 10, "Oguz Atay", "Iletisim", 724);
+	product = new Book("Don Quijote", 10, "Mig. de Cerv.", "YKY", 292);
 	products.push_back(product);
-	product = new Magazine("bb", 5, 34, "TV");
+	product = new Magazine("Nat. Geog.", 10, 123, "Nature");
 	products.push_back(product);
 	
 	bool loggedIn = false;
@@ -121,6 +121,10 @@ int main() {
 				else if (choice == 4) {
 					productButton.Show(products);
 				}
+				else if (choice == 11)
+				{
+					break;
+				}
 				else if (!loggedIn) {
 					cout << "Please log in to system first." << endl;
 					cout << "Do you want to log in now?" << endl;
@@ -176,10 +180,7 @@ int main() {
 					shoppingButton.ShowInvoice();
 					
 				}
-				else if (choice == 11)
-				{
-					break;
-				}
+
 				system("pause");
 				system("cls");
 			}

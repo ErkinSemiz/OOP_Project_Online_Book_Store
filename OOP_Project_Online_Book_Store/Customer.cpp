@@ -67,7 +67,7 @@ const double& Customer::getBonus() const
 /*! \param bonus Sets the Customer's Bonus.*/
 void Customer::setBonus(const double bonus)
 {
-	this->bonus = bonus;
+	this->bonus += bonus;
 }
 /*! \return The customer's E-mail. */
 const string& Customer::getEmail() const
