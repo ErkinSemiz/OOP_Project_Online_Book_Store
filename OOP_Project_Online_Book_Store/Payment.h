@@ -4,7 +4,7 @@
 using namespace std;
 /**
 * @file Payment.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
+* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
 * @date December, 2016
 * @brief Base class for other payment types.
 *
@@ -24,9 +24,6 @@ public:
 	//! Set amount
 	void setAmount(double amount);
 	//! Virtual function for inhert classes.
-	/*!
-		Make a payment.
-	*/
-	virtual void performPayment();
+	virtual void performPayment()=0;
 };
 

@@ -2,9 +2,10 @@
 #include <iostream>
 #include "Customer.h"
 #include <list>
+#include <algorithm>
 /**
 * @file CustomerButton.h
-* @Author Tahir Özdemir (tahirozdemir34@gmail.com)
+* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
 * @date December, 2016
 * @brief Class for creating "CustomerButton"s to be used in the main menu.
 *
@@ -17,8 +18,8 @@ public:
 	CustomerButton();
 	//! Destructor function for CustomerButton class.
 	~CustomerButton();
-	//! The submenu for adding a customer to the system.
+	//! The function for adding a customer to the system.
 	void Add(list<Customer>& customers);
-	//! The submenu for showing the customers in the system.
+	//! The function for showing the customers in the system.
 	void Show(list<Customer>& customers) const;
 };

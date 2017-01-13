@@ -19,11 +19,11 @@ int main() {
 	ShoppingCart shopping_cart;
 	ShoppingButton shoppingButton(&shopping_cart);
 
-	Customer *customer = new Customer("bilgehan", "buyukdere", "5301234567", "bilg@esk.com", "bilgehan", "123");
+	Customer *customer = new Customer("Bilgehan", "Buyukdere/Eskisehir/Turkey", "5301234567", "bilg@esk.com", "bilgehan", "123");
 	customers.push_back(*customer);
-	customer = new Customer("erkin", "hastane", "5311234567", "erk@esk.com", "a", "a");
+	customer = new Customer("Erkin", "Gokmeydan/Eskisehir/Turkey", "5311234567", "erk@esk.com", "erkin", "123");
 	customers.push_back(*customer);
-	customer = new Customer("tahir", "kutahya", "5321234567", "tah@esk.com", "tahir", "123");
+	customer = new Customer("Tahir", "Buyukdere/Eskisehir/Turkey", "5321234567", "tah@esk.com", "tahir", "123");
 	customers.push_back(*customer);
 
 	Product* product = new Magazine("Oyungezer", 12, 66, "Game");
@@ -65,7 +65,6 @@ int main() {
 				customerButton.Show(customers);
 				system("pause");
 			}
-			//system("cls");
 		}
 		else if (choice == 2) {
 			cout << "Product Menu\n----------\n";
@@ -83,7 +82,6 @@ int main() {
 				productButton.Show(products);
 				system("pause");
 			}
-			//system("cls");
 		}
 
 		else if (choice == 3) {
@@ -164,7 +162,6 @@ int main() {
 				}
 				else if (choice == 6) {
 					shoppingButton.ShowBonus();
-					//cout << shopping_cart.getCustomer()->getName() << "' s Bonus: " << shopping_cart.getCustomer()->getBonus() << endl;
 				}
 				else if (choice == 7) {
 					shoppingButton.UseBonus();

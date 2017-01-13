@@ -5,7 +5,7 @@
 using namespace std;
 /**
 * @file Magazine.h
-* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
+* @Author Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Class for creating "Magazine"s
 *
@@ -28,5 +28,4 @@ public:
 	string getType() const;
 	//! Sets Type of the magazine.
 	void setType(const string& type);
-	string getproduct() const;
 };

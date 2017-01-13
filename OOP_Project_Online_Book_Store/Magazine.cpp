@@ -7,10 +7,8 @@ Properties of the Magazine object will be printed
 */
 void Magazine::printProperties() const
 {
-	Product::printProperties();
-	cout << "|        -        |      -      |    -   |   "<< setw(6)<< Issue << "|  "<< setw(12) << type << "|"<< endl;
-	//cout << "The Magazine's Issue is: " << Issue << endl;
-	//cout << "The Magazine's Type is: " << type << endl;
+	cout << "|   " << getID() << "  | " << setw(17) << left << getName() << "|   " << setw(8) << getPrice()
+	 << "|        -        |      -      |    -   |   "<< setw(6)<< Issue << "|  "<< setw(12) << type << "|"<< endl;
 }
 /*! \return The Issue of the Magazine */
 int Magazine::getIssue() const
@@ -35,9 +33,4 @@ string Magazine::getType() const
 void Magazine::setType(const string& type)
 {
 	this->type = type;
-}
-
-string Magazine::getproduct() const
-{
-	return "Magazine";
 }

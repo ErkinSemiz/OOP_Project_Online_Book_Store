@@ -7,10 +7,9 @@ Properties of the MusicCD object will be printed
 */
 void MusicCD::printProperties() const
 {
-	Product::printProperties();
-	cout << "|  " << setw(15) << singer << "|      -      |    -   |    -    |  " <<setw(12) <<type << "|"<< endl;
-	//cout << "The Singer is: " << singer << endl;
-	//cout << "The Type is: " << type << endl;
+
+	cout << "|   " << getID() << "  | " << setw(17) << left << getName() << "|   " << setw(8) << getPrice()
+	 << "|  " << setw(15) << singer << "|      -      |    -   |    -    |  " <<setw(12) <<type << "|"<< endl;
 }
 /*! \return The singer of the MusicCD */
 string MusicCD::getSinger() const
@@ -37,7 +36,3 @@ void MusicCD::setType(const string& type)
 	this->type = type;
 }
 
-string MusicCD::getproduct() const
-{
-	return "MusicCD";
-}

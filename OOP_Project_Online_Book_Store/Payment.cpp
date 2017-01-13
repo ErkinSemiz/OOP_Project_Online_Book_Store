@@ -22,7 +22,4 @@ void Payment::setAmount(double amount)
 {
 	this->amount = amount;
 }
-/*! Performs the payment */
-void Payment::performPayment()
-{
-}
+

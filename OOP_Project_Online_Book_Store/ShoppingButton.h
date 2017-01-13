@@ -6,7 +6,7 @@
 
 /**
 * @file ShoppingButton.h
-* @Authors Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com),Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
+* @Authors Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
 * @date December, 2016
 * @brief Class for creating "ShoppingButton"s to be used in the main menu.
 *

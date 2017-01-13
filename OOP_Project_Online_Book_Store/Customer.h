@@ -12,8 +12,8 @@ using namespace std;
 */
 class Customer
 {
-private:
-	static int totalCustomer;
+private: 
+	static int totalCustomer;   /*!< the number of the customers in system */ 
 	long customerID;  /*!< Customer ID */ 
 	string name; /*!< Customer name */ 
 	string adress; /*!< Customer adress */ 

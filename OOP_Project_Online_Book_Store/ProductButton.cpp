@@ -2,20 +2,14 @@
 #include <string>
 #include <typeinfo>
 using namespace std;
-/*!
-Constructor function for the ProductButton class.
-*/
 ProductButton::ProductButton()
 {
 }
-/*!
-Destructor function for the ProductButton class.
-*/
 ProductButton::~ProductButton()
 {
 }
 /*!
-	The function for adding a product to the system.
+\param products A list of Products in the system.
 */
 void ProductButton::Add(list<Product*>& products)
 {
@@ -35,7 +29,7 @@ void ProductButton::Add(list<Product*>& products)
 		int _page;
 		cin.ignore();
 		while (true) {
-			cout << "Enter Product name: ";
+			cout << "Enter Product Name: ";
 
 			getline(cin, _prdname);
 			if (!_prdname.empty())
@@ -136,7 +130,7 @@ void ProductButton::Add(list<Product*>& products)
 
 }
 /*!
-The function for showing the products in the system.
+\param products A list of Products in the system.
 */
 void ProductButton::Show(list<Product*>& products) const
 {

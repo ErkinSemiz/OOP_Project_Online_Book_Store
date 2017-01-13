@@ -5,7 +5,7 @@
 using namespace std;
 /**
 * @file MusicCD.h
-* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
+* @Author Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Class for creating "MusicCD"s
 *
@@ -27,5 +27,4 @@ public:
 	string getType() const;
 	//! Sets the type of the MusicCd.
 	void setType(const string& type);
-	string getproduct() const;
 };

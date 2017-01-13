@@ -2,7 +2,7 @@
 #include "Payment.h"
 /**
 * @file CreditCard.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
+* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
 * @date December, 2016
 * @brief Payment method for customer.
 */
@@ -10,7 +10,7 @@ class CreditCard :
 	public Payment
 {
 private:
-	long number;  /*!< Card Number */ 
+	long long number;  /*!< Card Number */ 
 	string type;  /*!< Card Type */ 
 	string expDate; /*!< Expire date of card*/ 
 public:
@@ -19,10 +19,10 @@ public:
 	//! Default deconstructor function
 	~CreditCard();
 	//! Return card number.
-	long getNumber() const;
+	long long getNumber() const;
 
 	//! Set card number.
-	void setNumber(long number);
+	void setNumber(long long number);
 
 	//! Return card type.
 	string getType() const;

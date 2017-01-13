@@ -2,7 +2,7 @@
 #include "Product.h"
 /**
 * @file ProductToPurchase.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
+* @Author Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Keeps informations about purchase that will be bought
 */

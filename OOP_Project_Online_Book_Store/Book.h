@@ -2,7 +2,7 @@
 #include "Product.h"
 /**
 * @file Book.h
-* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
+* @Author Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Class for creating "Book"s
 *
@@ -34,6 +34,5 @@ public:
 	int getPage()const;
 	//! Set page count of book.
 	void setPage(int page);
-	string getproduct() const;
 };
 

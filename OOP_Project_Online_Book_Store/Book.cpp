@@ -1,6 +1,10 @@
 #include "Book.h"
 /*!
 Constructor function for the Book class.
+\param name Name of the book.
+\param author Author of the book.
+\param publisher Publisher of the book.
+\param page Page count of the book.
 */
 Book::Book(string name, double price, string author, string publisher, int page):Product(name,price), author(author), publisher(publisher), page(page)
 {
@@ -17,11 +21,9 @@ Properties of the Book object will be printed
 */
 void Book::printProperties() const
 {
-	Product::printProperties();
-	cout << "|  "<<setw(15) << author << "|  "<< setw(11) <<publisher << "|  "<<setw(6) << page <<"|    -    |       -      | " << endl;
-	//cout << "The Book's Author is: " << author << endl;
-	//cout << "The Book's Publisher is: " << publisher << endl;
-	//cout << "The Book's Page is: " << page << endl;
+	cout << "|   " << getID() << "  | " << setw(17) << left << getName() << "|   " << setw(8) << getPrice()
+	 << "|  "<<setw(15) << author << "|  "<< setw(11) <<publisher << "|  "<<setw(6) << page <<"|    -    |       -      | " << endl;
+
 }
 /*! \return The author of the book */
 string Book::getAuthor() const
@@ -41,7 +43,7 @@ string Book::getPublisher() const
 	return publisher;
 }
 /*!
-\param Issue "publisher" variable of Book will be set
+\param publisher "publisher" variable of Book will be set
 */
 void Book::setPublisher(const string& publisher)
 {
@@ -58,9 +60,4 @@ int Book::getPage() const
 void Book::setPage(int page)
 {
 	this->page = page;
-}
-/*! \return The name of class. */
-string Book::getproduct() const
-{
-	return "Book";
 }

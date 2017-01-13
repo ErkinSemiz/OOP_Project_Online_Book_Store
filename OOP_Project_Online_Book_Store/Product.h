@@ -5,7 +5,7 @@
 using namespace std;
 /**
 * @file Product.h
-* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
+* @Author Erkin Semiz (erkin1semiz@gmail.com)
 * @date December, 2016
 * @brief Base class for other products.
 *
@@ -36,9 +36,5 @@ public:
 	//! Set price of product.
 	void setPrice(double price);
 	//! Virtual function for inherit classes.
-	/*!
-	 Print informations of product to screen.
-	*/
-	virtual void printProperties() const;
-	virtual string getproduct() const;
+	virtual void printProperties() const = 0;
 };

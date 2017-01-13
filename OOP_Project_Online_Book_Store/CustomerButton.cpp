@@ -1,20 +1,12 @@
 #include "CustomerButton.h"
 #include <string>
-
-/*!
-Constructor function for the CustomerButton class.
-*/
 CustomerButton::CustomerButton()
 {
 }
-/*!
-Destructor function for the CustomerButton class.
-*/
 CustomerButton::~CustomerButton()
 {
 }
 /*!
-The function for adding a customer to the system.
 \param customers A list of customers in system
 */
 void CustomerButton::Add(list<Customer>& customers)
@@ -50,20 +42,15 @@ void CustomerButton::Add(list<Customer>& customers)
 	cout << "Enter email : ";
 	cin >> _email;
 
+
 	while (true) {
-		int flag = 0;
 		cout << "Enter username : ";
 		cin >> _username;
-		auto iterator = customers.begin();
-		for (int i = 0; i < customers.size(); i++)
-		{
-			if (_username == (*iterator).getUsername()) {
-				cout << "This user name has already taken. Please enter a new one." << endl;
-				flag = 1;
-			}
-			iterator = next(customers.begin(), (i + 1));
+		auto iterator = std::find_if(customers.begin(), customers.end(), [&](const Customer c) { return c.getUsername() == _username; });
+		if (iterator != customers.end()) {
+			cout << "This user name has already taken. Please enter a new one." << endl;
 		}
-		if (flag == 0)
+		else 
 			break;
 	}
 	cin.ignore();
@@ -78,7 +65,6 @@ void CustomerButton::Add(list<Customer>& customers)
 	customers.push_back(*customer);
 }
 /*!
-The function for showing the customers in the system.
 \param customers A list of customers in system
 */
 void CustomerButton::Show(list<Customer>& customers) const

@@ -1,7 +1,11 @@
 #include "Product.h"
 
 int Product::totalProduct = 0;
-
+/*! Product constructor.
+Increase "totalProduct" by one and set "ID".
+\param name Name of the product.
+\param price Price of the product.
+*/
 Product::Product(string name, double price) : name(name), price(price)
 {
 	ID = ++totalProduct;
@@ -29,7 +33,7 @@ string Product::getName() const
 	return name;
 }
 /*! 
-\param name "name" variable of Product will be set
+\param _name "name" variable of Product will be set
 */
 void Product::setName(const string& _name)
 {
@@ -41,24 +45,10 @@ double Product::getPrice() const
 	return price;
 }
 /*!
-\param price "price" variable of Product will be set
+\param _price "price" variable of Product will be set
 */
 void Product::setPrice( double _price)
 {
 	this->price = _price;
 }
-/*!
-Properties of the Product object will be printed
-*/
-void Product::printProperties()const
-{
-	cout <<"|   " << ID  << "  | "<<setw(17) << left << name << "|   "<< setw(8) << price;
-	//cout << "The Product's ID is: " << ID << endl;
-	//cout << "The Product's Name is: " << name << endl;
-	//cout << "The Product's Price is: " << price << endl;
-}
 
-string Product::getproduct() const
-{
-	return "Product";
-}

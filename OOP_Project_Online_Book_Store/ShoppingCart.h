@@ -6,7 +6,7 @@
 #include <algorithm>
 /**
 * @file ShoppingCart.h
-* @Authors Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com)
+* @Authors Tahir Ozdemir (tahirozdemir34@gmail.com),Erkin Semiz (erkin1semiz@gmail.com),Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
 * @date December, 2016
 * @brief Keeps products that will be bought and customer that using the "shopping cart"
 */
@@ -15,8 +15,8 @@ class ShoppingCart
 private:
 	list<ProductToPurchase*> productsToPurchase; /*!< Keeps a list of purchased products */ 
 	Payment* paymentMethod; /*!< Payment method for shopping */
-	Customer* customer;
-	bool isBonusUsed;
+	Customer* customer; /*!< Current customer in the system */
+	bool isBonusUsed; /*!< true if bonus will be used for shopping else false */
 public:
 	//! Default constructor function
 	ShoppingCart();

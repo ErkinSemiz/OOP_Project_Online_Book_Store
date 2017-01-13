@@ -2,10 +2,18 @@
 
 int Customer::totalCustomer = 0;
 
-/*! Customer constructor. */
+/*! Customer constructor.
+Set "bonus" to zero, increase "totalCustomer" by one and set "customerID".
+\param _name Name of the customer.
+\param _adress Adress of the customer.
+\param _phone Phone of the customer.
+\param _email email of the customer.
+\param _username Username of the customer.
+\param _password Password of the customer.
+
+*/
 Customer::Customer(string _name, string _adress, string _phone, string _email, string _username, string _password):name(_name), adress(_adress), phone(_phone), email(_email), username(_username), password(_password)
 {
-	
 	bonus = 0;
 	customerID = ++totalCustomer;
 }

@@ -17,14 +17,14 @@ CreditCard::~CreditCard()
 /*!
 \return Number of credit card
 */
-long CreditCard::getNumber() const
+long long CreditCard::getNumber() const
 {
 	return number;
 }
 /*!
 \param number Number of credit card will be set to this
 */
-void CreditCard::setNumber(long number)
+void CreditCard::setNumber(long long number)
 {
 	this->number = number;
 }

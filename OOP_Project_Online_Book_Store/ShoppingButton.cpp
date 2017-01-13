@@ -1,23 +1,17 @@
 #include "ShoppingButton.h"
 #include <string>
-//#include "Customer.h"
-//#include "ShoppingCart.h"
-
 /*!
-	Constructor function for ShoppingButton class.
+  \param cart Sets shopping cart for the current shopping operation.
 */
 ShoppingButton::ShoppingButton(ShoppingCart* cart)
 {
 	shopping_cart = cart;
 }
-/*!
-	Destructor function for ShoppingButton class.
-*/
 ShoppingButton::~ShoppingButton()
 {
 }
 /*!
-Function for a customer to log in to the system.
+\param customers A list of customers in the system.
 */
 bool ShoppingButton::Login(list<Customer>& customers)
 {
@@ -39,7 +33,7 @@ bool ShoppingButton::Login(list<Customer>& customers)
 	return false;
 }
 /*!
-	Function for adding a product to the customer's shopping cart.
+\param products A list of Products in the system.
 */
 void ShoppingButton::AddProduct(list<Product*>& products )
 {
@@ -58,7 +52,7 @@ void ShoppingButton::AddProduct(list<Product*>& products )
 	}
 }
 /*!
-	Function for removing a product from the customer's shopping cart.
+\param products A list of Products in the system.
 */
 void ShoppingButton::RemoveProduct(list<Product*>& products)
 {	
@@ -76,43 +70,28 @@ void ShoppingButton::RemoveProduct(list<Product*>& products)
 	}
 }
 /*!
-	Function for listing the customer's shopping cart.
+\param products A list of Products in the system.
 */
 bool ShoppingButton::ListShoppingCart(list<Product*>& products)
 {
 	return shopping_cart->printProducts();
 }
-/*!
-	 Function for showing the bonus that the customer has.
-*/
 void ShoppingButton::ShowBonus()
 {
 	cout << this->shopping_cart->getCustomer()->getName() << "' s Bonus: " << this->shopping_cart->getCustomer()->getBonus() << endl;
 }
-/*!
-//! Function for a customer to use bonus.
-*/
 void ShoppingButton::UseBonus()
 {
 	shopping_cart->setBonusUsed(true);
 }
-/*!
-Function for a customer to place order.
-*/
 void ShoppingButton::PlaceOrder()
 {
 	this->shopping_cart->placeOrder();
 }
-/*!
-	Function for a customer to cancel order.
-*/
 void ShoppingButton::CancelOrder()
 {
 	this->shopping_cart->cancelOrder();
 }
-/*!
-	 Function to show a customer his/her invoice.
-*/
 void ShoppingButton::ShowInvoice()
 {
 	this->shopping_cart->showInvoice();

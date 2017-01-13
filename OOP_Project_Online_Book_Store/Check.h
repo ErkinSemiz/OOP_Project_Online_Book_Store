@@ -2,7 +2,7 @@
 #include "Payment.h"
 /**
 * @file Check.h
-* @Author Tahir Ozdemir (tahirozdemir34@gmail.com)
+* @Author Mahmut Bilgehan Serbest (bilgehanserbest@gmail.com)
 * @date December, 2016
 * @brief Payment method for customer.
 */
